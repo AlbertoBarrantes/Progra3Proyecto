@@ -6,12 +6,35 @@
 <!-- REFERENCIAS 
 
 
-https://mdbootstrap.com/docs/standard/extended/registration/
+https://www.tutorialrepublic.com/codelab.php?topic=bootstrap-3&file=sign-up-form-with-icons
+
+
+
+Si  el  usuario  no  posee  cuenta,  este  se  podrá  registrarse  en  el  sitio  web, 
+suministrando la siguiente información: 
+o Usuario 
+o Contraseña 
+o Nombre 
+o Apellidos 
+o Correo electrónico 
+o Fecha Nacimiento 
+
+1 El diseño web adaptable, adaptativo o responsivo, es una filosofía de diseño y desarrollo 
+cuyo objetivo es adaptar la apariencia de las páginas web al dispositivo que se esté utilizando 
+para visualizarla 
+ 
+ 
+   
+Universidad Internacional de las Américas  4 
+o Dirección  (la  dirección  deberá  ser  mediante  en  señalamiento  de  un 
+punto en un mapa utilizando el API de google Maps) 
+o Teléfono de trabajo 
+o Celular 
+Cuando el usuario se registra, podrá tener acceso a las opciones de usuario. 
+
 
 
 -->
-
-
 
 
 
@@ -39,13 +62,27 @@ https://mdbootstrap.com/docs/standard/extended/registration/
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 
 
-  <!-- JavaScript  --> 
+  <!-- JavaScript  -->
   <script src="/js/signup.js"></script>
-    
 
+
+  <!-- CSS Font AWESOME CDN-->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 
 <body style="background-color: rgb(255, 255, 255);">
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -91,68 +128,85 @@ https://mdbootstrap.com/docs/standard/extended/registration/
 
 
 
-
-
-
-
-
   <!-- SIGN UP -->
-  <div class="signup-form">
+  <div class="my-5 signup-form shadow">
     <form action="/examples/actions/confirmation.php" method="post">
-		<h2>Sign Up</h2>
-		<p>Please fill in this form to create an account!</p>
-		<hr>
-        <div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-user"></i></span>
-				<input type="text" class="form-control" name="username" placeholder="Username" required="required">
-			</div>
+      <h2>Registro</h2>
+      <p>Por favor llene el formulario para crear una cuenta!</p>
+      <hr>
+      <!-- usuario -->
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+          <input type="text" class="form-control" name="username" placeholder="Usuario" required="required">
         </div>
-        <div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-				<input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
-			</div>
+      </div>
+      <!-- nombre -->
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <input type="text" class="form-control" name="name" placeholder="Nombre" required="required">
         </div>
-		<div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-				<input type="text" class="form-control" name="password" placeholder="Password" required="required">
-			</div>
+      </div>
+      <!-- primer apellido -->
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <input type="text" class="form-control" name="plastname" placeholder="Primer apellido" required="required">
         </div>
-		<div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon">
-					<i class="fa fa-lock"></i>
-					<i class="fa fa-check"></i>
-				</span>
-				<input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
-			</div>
+      </div>
+      <!-- segundo apellido -->
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <input type="text" class="form-control" name="slastname" placeholder="Segundo apellido" required="required">
         </div>
-        <div class="form-group">
-			<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
-		</div>
-		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+      </div>
+      <!-- fecha de nacimiento -->
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          <input type="date" class="form-control" id="startDate" required="required"/>
+          <span id="startDateSelected"></span>
         </div>
+      </div>
+      <!-- email -->
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+          <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+      </div>
+      <!-- contraseña -->
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input type="text" class="form-control" name="password" placeholder="Contraseña" required="required">
+        </div>
+      </div>
+      <!-- confirmar contraseña -->
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-lock"></i>
+            <i class="fa fa-check"></i>
+          </span>
+          <input type="text" class="form-control" name="confirm_password" placeholder="Confirmar contraseña"
+            required="required">
+        </div>
+      </div>
+      <!--
+      <div class="form-group">
+        <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of
+            Use</a> &amp; <a href="#">Privacy Policy</a></label>
+      </div>
+      -->
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+      </div>
     </form>
-	<div class="text-center">Already have an account? <a href="#">Login here</a></div>
-</div>
-
-  <!-- SIGN UP -->
-  
-
-
-
-  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker w-75">
-    <input placeholder="Select date" type="text" id="example" class="form-control">
-    <label for="example">Try me...</label>
-    <i class="fas fa-calendar input-prefix" tabindex=0></i>
   </div>
-
-
-
-
+  <!-- SIGN UP -->
 
 
 
@@ -164,6 +218,11 @@ https://mdbootstrap.com/docs/standard/extended/registration/
 
 
   <br><br>
+
+
+
+
+
 
 
 
@@ -195,7 +254,7 @@ https://mdbootstrap.com/docs/standard/extended/registration/
       <!-- Section: Text -->
       <section class="mb-4">
         <p>
-          El mejor precio garantizado, planifique su viaje o haga reservas de última hora en un solo lugar. 
+          El mejor precio garantizado, planifique su viaje o haga reservas de última hora en un solo lugar.
         </p>
       </section>
       <!-- Section: Text -->
@@ -275,17 +334,15 @@ https://mdbootstrap.com/docs/standard/extended/registration/
             </ul>
           </div>
           <!--Grid column-->
-          
+
         </div>
         <!--Grid row-->
       </section>
       <!-- Section: Links -->
     </div>
     <!-- Grid container -->
-
-
   </footer>
-  <!-- Footer -->
+  <!-- FOOTER -->
 
 </body>
 
