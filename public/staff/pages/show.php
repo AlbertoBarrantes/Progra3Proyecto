@@ -20,7 +20,7 @@ $page = find_page_by_id($id);
     <h1>Page: <?php echo h($page['menu_name']); ?></h1>
 
     <div class="attributes">
-      <?php $subject = find_subject_by_id($page['subject_id']); ?>
+      <?php $subject = find_subject_by_id($page['subjects_id']); ?>
       <dl>
         <dt>Subject</dt>
         <dd><?php echo h($subject['menu_name']); ?></dd>

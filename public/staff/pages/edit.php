@@ -13,24 +13,28 @@ if(is_post_request()) {
 
   $page = [];
   $page['id'] = $id;
-  $page['subject_id'] = $_POST['subject_id'] ?? '';
+  $page['subjects_id'] = $_POST['subjects_id'] ?? '';
   $page['menu_name'] = $_POST['menu_name'] ?? '';
   $page['position'] = $_POST['position'] ?? '';
   $page['visible'] = $_POST['visible'] ?? '';
   $page['content'] = $_POST['content'] ?? '';
 
   $result = update_page($page);
-  redirect_to(url_for('/staff/pages/show.php?id=' . $id));
+  if($result === true) {
+    redirect_to(url_for('/staff/pages/show.php?id=' . $id));
+  } else {
+    $errors = $result;
+  }
 
 } else {
 
   $page = find_page_by_id($id);
 
-  $page_set = find_all_pages();
-  $page_count = mysqli_num_rows($page_set);
-  mysqli_free_result($page_set);
-
 }
+
+$page_set = find_all_pages();
+$page_count = mysqli_num_rows($page_set);
+mysqli_free_result($page_set);
 
 ?>
 
@@ -44,16 +48,18 @@ if(is_post_request()) {
   <div class="page edit">
     <h1>Edit Page</h1>
 
+    <?php echo display_errors($errors); ?>
+
     <form action="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($id))); ?>" method="post">
       <dl>
         <dt>Subject</dt>
         <dd>
-          <select name="subject_id">
+          <select name="subjects_id">
           <?php
             $subject_set = find_all_subjects();
             while($subject = mysqli_fetch_assoc($subject_set)) {
               echo "<option value=\"" . h($subject['id']) . "\"";
-              if($page["subject_id"] == $subject['id']) {
+              if($page["subjects_id"] == $subject['id']) {
                 echo " selected";
               }
               echo ">" . h($subject['menu_name']) . "</option>";
