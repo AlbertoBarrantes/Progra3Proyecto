@@ -33,6 +33,7 @@ if(is_post_request()) {
       } else {
         // username found, but password does not match
         $errors[] = $login_failure_msg;
+        
       }
 
     } else {
