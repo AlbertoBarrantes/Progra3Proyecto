@@ -1,4 +1,5 @@
 <?php
+// Los credenciales de la base de datos
 
 define("DB_SERVER", "localhost");
 define("DB_USER", "admin");

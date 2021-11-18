@@ -1,54 +1,54 @@
 <?php
 
-  // is_blank('abcd')
-  // * validate data presence
-  // * uses trim() so empty spaces don't count
-  // * uses === to avoid false positives
-  // * better than empty() which considers "0" to be empty
+// está_en blanco ('abcd')
+   // * validar la presencia de datos
+   // * usa trim () para que los espacios vacíos no cuenten
+   // * usa === para evitar falsos positivos
+   // * mejor que vacío () que considera que "0" está vacío
   function is_blank($value) {
     return !isset($value) || trim($value) === '';
   }
 
-  // has_presence('abcd')
-  // * validate data presence
-  // * reverse of is_blank()
-  // * I prefer validation names with "has_"
+// has_presence ('abcd')
+   // * validar la presencia de datos
+   // * reverso de is_blank ()
+   // * Prefiero los nombres de validación con "has_"
   function has_presence($value) {
     return !is_blank($value);
   }
 
-  // has_length_greater_than('abcd', 3)
-  // * validate string length
-  // * spaces count towards length
-  // * use trim() if spaces should not count
+// has_length_greater_than ('abcd', 3)
+   // * validar la longitud de la cadena
+   // * los espacios cuentan para la longitud
+   // * use trim () si los espacios no deben contar
   function has_length_greater_than($value, $min) {
     $length = strlen($value);
     return $length > $min;
   }
 
-  // has_length_less_than('abcd', 5)
-  // * validate string length
-  // * spaces count towards length
-  // * use trim() if spaces should not count
+ // has_length_less_than ('abcd', 5)
+   // * validar la longitud de la cadena
+   // * los espacios cuentan para la longitud
+   // * use trim () si los espacios no deben contar
   function has_length_less_than($value, $max) {
     $length = strlen($value);
     return $length < $max;
   }
 
-  // has_length_exactly('abcd', 4)
-  // * validate string length
-  // * spaces count towards length
-  // * use trim() if spaces should not count
+// has_length_exactly ('abcd', 4)
+   // * validar la longitud de la cadena
+   // * los espacios cuentan para la longitud
+   // * use trim () si los espacios no deben contar
   function has_length_exactly($value, $exact) {
     $length = strlen($value);
     return $length == $exact;
   }
 
-  // has_length('abcd', ['min' => 3, 'max' => 5])
-  // * validate string length
-  // * combines functions_greater_than, _less_than, _exactly
-  // * spaces count towards length
-  // * use trim() if spaces should not count
+// has_length ('abcd', ['min' => 3, 'max' => 5])
+   // * validar la longitud de la cadena
+   // * combina funciones_mayor_que, _menos_que, _exactamente
+   // * los espacios cuentan para la longitud
+   // * use trim () si los espacios no deben contar
   function has_length($value, $options) {
     if(isset($options['min']) && !has_length_greater_than($value, $options['min'] - 1)) {
       return false;
@@ -62,42 +62,42 @@
   }
 
   // has_inclusion_of( 5, [1,3,5,7,9] )
-  // * validate inclusion in a set
+  // * validar la inclusión en un set
   function has_inclusion_of($value, $set) {
   	return in_array($value, $set);
   }
 
   // has_exclusion_of( 5, [1,3,5,7,9] )
-  // * validate exclusion from a set
+  // * validar la exclusión de un set
   function has_exclusion_of($value, $set) {
     return !in_array($value, $set);
   }
 
-  // has_string('nobody@nowhere.com', '.com')
-  // * validate inclusion of character(s)
-  // * strpos returns string start position or false
-  // * uses !== to prevent position 0 from being considered false
-  // * strpos is faster than preg_match()
+// has_string ('nadie@nowhere.com', '.com')
+   // * validar la inclusión de carácter (s)
+   // * strpos devuelve la posición inicial de la cadena o falso
+   // * usa! == para evitar que la posición 0 se considere falsa
+   // * strpos es más rápido que preg_match ()
   function has_string($value, $required_string) {
     return strpos($value, $required_string) !== false;
   }
 
-  // has_valid_email_format('nobody@nowhere.com')
-  // * validate correct format for email addresses
-  // * format: [chars]@[chars].[2+ letters]
-  // * preg_match is helpful, uses a regular expression
-  //    returns 1 for a match, 0 for no match
-  //    http://php.net/manual/en/function.preg-match.php
+// has_valid_email_format ('nadie@nowhere.com')
+   // * validar el formato correcto para las direcciones de correo electrónico
+   // * formato: [caracteres] @ [caracteres]. [2+ letras]
+   // * preg_match es útil, usa una expresión regular
+   // devuelve 1 para una coincidencia, 0 para ninguna coincidencia
+   // http://php.net/manual/en/function.preg-match.php
   function has_valid_email_format($value) {
     $email_regex = '/\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\Z/i';
     return preg_match($email_regex, $value) === 1;
   }
 
-  // has_unique_page_menu_name('History')
-  // * Validates uniqueness of pages.menu_name
-  // * For new records, provide only the menu_name.
-  // * For existing records, provide current ID as second arugment
-  //   has_unique_page_menu_name('History', 4)
+// has_unique_page_menu_name ('Historial')
+   // * Valida la unicidad de pages.menu_name
+   // * Para registros nuevos, proporcione solo el nombre_menú.
+   // * Para registros existentes, proporcione ID actual como segundo argumento
+   // has_unique_page_menu_name ('Historial', 4)
   function has_unique_page_menu_name($menu_name, $current_id="0") {
     global $db;
 
@@ -112,11 +112,11 @@
     return $page_count === 0;
   }
 
-  // has_unique_username('johnqpublic')
-  // * Validates uniqueness of admins.username
-  // * For new records, provide only the username.
-  // * For existing records, provide current ID as second argument
-  //   has_unique_username('johnqpublic', 4)
+// has_unique_username ('johnqpublic')
+   // * Valida la unicidad de admins.username
+   // * Para registros nuevos, proporcione solo el nombre de usuario.
+   // * Para los registros existentes, proporcione la ID actual como segundo argumento
+   // has_unique_username ('johnqpublic', 4)
   function has_unique_username($username, $current_id="0") {
     global $db;
 

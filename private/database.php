@@ -1,5 +1,5 @@
 <?php
-
+// Las funciones para facilitar las conecciones en las distintas paginas
   require_once('db_credentials.php');
 
   function db_connect() {

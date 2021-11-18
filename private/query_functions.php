@@ -47,7 +47,7 @@
     }
 
     // position
-    // Make sure we are working with an integer
+    // Asegura de que estamos trabajando con un número entero
     $postion_int = (int) $subject['position'];
     if($postion_int <= 0) {
       $errors[] = "Position must be greater than zero.";
@@ -57,7 +57,7 @@
     }
 
     // visible
-    // Make sure we are working with a string
+    // Asegúra de que estemos trabajando con un string
     $visible_str = (string) $subject['visible'];
     if(!has_inclusion_of($visible_str, ["0","1"])) {
       $errors[] = "Visible must be true or false.";
@@ -82,11 +82,11 @@
     $sql .= "'" . db_escape($db, $subject['visible']) . "'";
     $sql .= ")";
     $result = mysqli_query($db, $sql);
-    // For INSERT statements, $result is true/false
+    // Para las declaraciones INSERT, $result es verdadero / falso
     if($result) {
       return true;
     } else {
-      // INSERT failed
+      // si INSERT falla
       echo mysqli_error($db);
       db_disconnect($db);
       exit;
@@ -109,11 +109,11 @@
     $sql .= "LIMIT 1";
 
     $result = mysqli_query($db, $sql);
-    // For UPDATE statements, $result is true/false
+    // Para las declaraciones UPDATE, $result es verdadero / falso
     if($result) {
       return true;
     } else {
-      // UPDATE failed
+      // si UPDATE falla
       echo mysqli_error($db);
       db_disconnect($db);
       exit;
@@ -129,11 +129,11 @@
     $sql .= "LIMIT 1";
     $result = mysqli_query($db, $sql);
 
-    // For DELETE statements, $result is true/false
+    // Para las declaraciones DELETE, $result es verdadero / falso
     if($result) {
       return true;
     } else {
-      // DELETE failed
+      // si DELETE falla
       echo mysqli_error($db);
       db_disconnect($db);
       exit;
@@ -190,7 +190,7 @@
 
 
     // position
-    // Make sure we are working with an integer
+    // Asegúra de que estemos trabajando con un integer
     $postion_int = (int) $page['position'];
     if($postion_int <= 0) {
       $errors[] = "Position must be greater than zero.";
@@ -200,7 +200,7 @@
     }
 
     // visible
-    // Make sure we are working with a string
+    // Asegúra de que estemos trabajando con un string
     $visible_str = (string) $page['visible'];
     if(!has_inclusion_of($visible_str, ["0","1"])) {
       $errors[] = "Visible must be true or false.";
@@ -232,11 +232,11 @@
     $sql .= "'" . db_escape($db, $page['content']) . "'";
     $sql .= ")";
     $result = mysqli_query($db, $sql);
-    // For INSERT statements, $result is true/false
+    // Para las declaraciones INSERT, $result es verdadero / falso
     if($result) {
       return true;
     } else {
-      // INSERT failed
+      // si INSERT falla
       echo mysqli_error($db);
       db_disconnect($db);
       exit;

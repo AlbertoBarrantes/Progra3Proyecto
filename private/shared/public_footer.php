@@ -2,7 +2,7 @@
     <p>Copyright <?php echo date('Y'); ?>, Easy Travel </p>
   </footer>
 
-  <p>This is a fictitious company created by <a href=" ">UIA students</a>, solely for the creation and development of educational training materials. Any resemblance to real products or services is purely coincidental. Information provided about the products or services is also fictitious and should not be construed as representative of actual products or services on the market in a similar product or service category.</p>
+  <p>Esta es una empresa ficticia creada por <a href=" ">estudiantes de la Universidad Internacional de las Americas</a>, únicamente para la creación y desarrollo de materiales educativos de formación. Cualquier parecido con productos o servicios reales es pura coincidencia. La información proporcionada sobre los productos o servicios también es ficticia y no debe interpretarse como representativa de productos o servicios reales en el mercado en una categoría de producto o servicio similar.</p>
 
   </body>
 </html>

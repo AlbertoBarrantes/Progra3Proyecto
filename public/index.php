@@ -28,14 +28,14 @@ if(isset($_GET['id'])) {
     redirect_to(url_for('/index.php'));
   }
   $page_set = find_pages_by_subject_id($subject_id, ['visible' => $visible]);
-  $page = mysqli_fetch_assoc($page_set); // first page
+  $page = mysqli_fetch_assoc($page_set); // fPrimera pagina
   mysqli_free_result($page_set);
   if(!$page) {
     redirect_to(url_for('/index.php'));
   }
   $page_id = $page['id'];
 } else {
-  // nothing selected; show the homepage
+  // nada seleccionado; mostrar la página de inicio
 }
 
 ?>
@@ -50,16 +50,16 @@ if(isset($_GET['id'])) {
 
     <?php
       if(isset($page)) {
-        // show the page from the database
+        // mostrar la página de la base de datos
         $allowed_tags = '<div><img><h1><h2><p><br><strong><em><ul><li>';
         echo strip_tags($page['content'], $allowed_tags);
 
       } else {
-        // Show the homepage
-        // The homepage content could:
-        // * be static content (here or in a shared file)
-        // * show the first page from the nav
-        // * be in the database but add code to hide in the nav
+         // Mostrar la página de inicio
+         // El contenido de la página de inicio podría:
+         // * ser contenido estático (aquí o en un archivo compartido)
+         // * muestra la primera página del navegador
+         // * estar en la base de datos pero agregar código para ocultar en la navegación
         include(SHARED_PATH . '/static_homepage.php');
       }
     ?>
