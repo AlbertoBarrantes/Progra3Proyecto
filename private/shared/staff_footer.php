@@ -1,9 +1,10 @@
 <footer>
-      &copy; <?php echo date('Y'); ?> Travel Projects
-    </footer>
-  </body>
+  &copy; <?php echo date('Y'); ?> Globe Bank
+</footer>
+
+</body>
 </html>
 
-<?php 
+<?php
   db_disconnect($db);
 ?>
