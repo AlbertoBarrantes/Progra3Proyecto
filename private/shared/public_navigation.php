@@ -1,5 +1,5 @@
 <?php
-  // Default values to prevent errors
+  // Valores predeterminados para evitar errores
   $page_id = $page_id ?? '';
   $subject_id = $subject_id ?? '';
   $visible = $visible ?? true;
@@ -25,13 +25,13 @@
                   <?php echo h($nav_page['menu_name']); ?>
                 </a>
               </li>
-            <?php } // while $nav_pages ?>
+            <?php } // cierre de while $nav_pages ?>
           </ul>
           <?php mysqli_free_result($nav_pages); ?>
-        <?php } // if($nav_subject['id'] == $subject_id) ?>
+        <?php } // cierre de if($nav_subject['id'] == $subject_id) ?>
 
       </li>
-    <?php } // while $nav_subjects ?>
+    <?php } // cierre de while $nav_subjects ?>
   </ul>
   <?php mysqli_free_result($nav_subjects); ?>
 </navigation>
