@@ -1,16 +1,3 @@
-
-
-date picker: https://www.codeply.com/p/zU0EWDmIfn
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -102,106 +89,127 @@ date picker: https://www.codeply.com/p/zU0EWDmIfn
 
 
     <!-- SIGN UP -->
-    <div class="my-5 signup-form shadow">
+    <div class="my-5 signup-form2 shadow container">
         <form>
-            <h2>Mi cuenta</h2>
-            <hr>
+            <div class="row">
+                <h2>Mi cuenta</h2>
+                <hr>
 
-            <!-- usuario -->
-            <div class="form-group">
-                <div>
-                    <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-                    <label for="user" class="form-label">Usuario</label>
-                    <input id="user" disabled type="text" class="form-control" name="username" placeholder="X"
-                        required="required">
+
+
+                <div class="col-md-6 col-xs-12">
+                    <!-- usuario -->
+                    <div class="form-group">
+                        <div>
+                            <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+                            <label for="user" class="form-label">Usuario</label>
+                            <input id="user" disabled type="text" class="form-control" name="username" 
+                                required="required">
+                        </div>
+                    </div>
+
+                    <!-- nombre -->
+                    <div class="form-group">
+                        <div>
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <label for="name" class="form-label">Nombre</label>
+                            <input disabled id="name" type="text" class="form-control" name="name" 
+                                required="required">
+                        </div>
+                    </div>
+
+                    <!-- primer apellido -->
+                    <div class="form-group">
+                        <div>
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <label for="pa" class="form-label">Primer Apellido</label>
+                            <input id="pa" disabled type="text" class="form-control" name="plastname" 
+                                required="required">
+                        </div>
+                    </div>
+
+                    <!-- segundo apellido -->
+                    <div class="form-group">
+                        <div>
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <label for="sa" class="form-label">Segundo Apellido</label>
+                            <input id="sa" disabled type="text" class="form-control" name="slastname" 
+                                required="required">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-md-6 col-xs-12">
+                    <!-- fecha de nacimiento -->
+                    <div class="form-group">
+                        <div>
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <label for="date" class="form-label">Fecha de Nacimiento</label>
+                            <input id="date" disabled type="date" class="form-control" id="startDate"
+                                required="required" />
+                            <span id="startDateSelected"></span>
+                        </div>
+                    </div>
+
+                    <!-- email -->
+                    <div class="form-group">
+                        <div>
+                            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" disabled type="email" class="form-control" name="email" 
+                                required="required">
+                        </div>
+                    </div>
+
+                    <!-- contraseña -->
+                    <div class="form-group">
+                        <div>
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <label for="password1" class="form-label">Contraseña</label>
+                            <input id="password1" disabled type="text" class="form-control" name="password" 
+                                required="required">
+                        </div>
+                    </div>
+
+                    <!-- confirmar contraseña -->
+                    <div class="form-group">
+                        <div>
+                            <span class="input-group-addon">
+                                <i class="fa fa-lock"></i>
+                                <i class="fa fa-check"></i>
+                            </span>
+                            <label for="password2" class="form-label">Confirmar Contraseña</label>
+                            <input id="password2" disabled type="text" class="form-control" name="confirm_password"
+                                 required="required">
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- nombre -->
-            <div class="form-group">
-                <div>
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <label for="name" class="form-label">Nombre</label>
-                    <input disabled id="name" type="text" class="form-control" name="name" placeholder="X"
-                        required="required">
-                </div>
-            </div>
-
-            <!-- primer apellido -->
-            <div class="form-group">
-                <div>
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <label for="pa" class="form-label">Primer Apellido</label>
-                    <input id="pa" disabled type="text" class="form-control" name="plastname" placeholder="X"
-                        required="required">
-                </div>
-            </div>
-
-            <!-- segundo apellido -->
-            <div class="form-group">
-                <div>
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <label for="sa" class="form-label">Segundo Apellido</label>
-                    <input id="sa" disabled type="text" class="form-control" name="slastname" placeholder="X"
-                        required="required">
-                </div>
-            </div>
-
-            <!-- fecha de nacimiento -->
-            <div class="form-group">
-                <div>
-                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                    <label for="date" class="form-label">Fecha de Nacimiento</label>
-                    <input id="date" disabled type="date" class="form-control" id="startDate" required="required" />
-                    <span id="startDateSelected"></span>
-                </div>
-            </div>
-
-            <!-- email -->
-            <div class="form-group">
-                <div>
-                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                    <label for="email" class="form-label">email</label>
-                    <input id="email" disabled type="email" class="form-control" name="email" placeholder="X"
-                        required="required">
-                </div>
-            </div>
-
-            <!-- contraseña -->
-            <div class="form-group">
-                <div>
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <label for="password1" class="form-label">Contraseña</label>
-                    <input disabled type="text" class="form-control" name="password" placeholder="X"
-                        required="required">
-                </div>
-            </div>
-
-            <!-- confirmar contraseña -->
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-lock"></i>
-                        <i class="fa fa-check"></i>
-                    </span>
-                    <input id="password2" disabled type="text" class="form-control" name="confirm_password"
-                        placeholder="X" required="required">
-                </div>
-            </div>
 
             <!-- Botones-->
-            <div class="row">
-                <div class="form-group col-6">
-                    <button id="btnMod" onClick="profileMod()" type="button" class="btn btn-primary btn-lg">Modificar</button>
-                </div>
-                <div class="form-group col-6">
-                    <button id="btnSave" disabled type="submit" class="btn btn-primary btn-lg">Guardar</button>
+            <div>
+                <div class="row row-cols-auto justify-content-center">
+                    <div id="divBtnMod" class="form-group col ">
+                        <button id="btnMod" onClick="enableInput()" type="button"
+                            class="btn btn-primary btn-lg">Modificar datos</button>
+                    </div>
+                    <div id="divBtnSave" class="form-group col collapse">
+                        <button id="btnSave" onClick="disableInput()" type="button" class="btn btn-primary btn-lg">Guardar cambios</button>
+                    </div>
+                    <div id="divBtnExit"class="form-group col collapse">
+                        <button id="btnExit" onClick="discardModification()" type="button" class="btn btn-primary btn-lg">Salir</button>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
     <!-- SIGN UP -->
-
 
 
 

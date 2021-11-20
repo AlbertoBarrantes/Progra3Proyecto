@@ -38,12 +38,15 @@ booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking
   <!-- Bootstrap icons-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 
+  <script src="/js/bootstrap.js"></script>
 
-  <!-- JavaScript Bundle with Popper --> 
+
+
+  <!-- JavaScript Bundle with Popper 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" async defer
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-    
+  -->
 
 </head>
 
@@ -74,7 +77,7 @@ booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking
               <a class="nav-link active" aria-current="page" href="#">Registrarse</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Ingresar</a>
+              <a class="nav-link active" aria-current="page" href="#">Acceder a mi cuenta</a>
             </li>
           </ul>
 
@@ -153,37 +156,70 @@ booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking
   <!-- BUSCADOR DE VUELOS -->
   <div class="wrapper bg-white">
     <form action="#">
-        <div class="form-group border-bottom d-flex align-items-center justify-content-between flex-wrap"> <label class="option my-sm-0 my-2"> <input type="radio" name="radio" checked>Ida y Vuelta<span class="checkmark"></span> </label> <label class="option my-sm-0 my-2"> <input type="radio" name="radio">Solo ida <span class="checkmark"></span> </label>
-            <div class="d-flex align-items-center my-sm-0 my-2"> <a href="#" class="text-decoration-none"> Multi-city/Stopovers <span class="fas fa-angle-right ps-2 text-primary"></span> </a> </div>
+
+      <!-- Radio Buttons -->
+      <div class="form-group d-flex align-items-center justify-content-start flex-wrap">
+        <label class="option my-sm-0 my-2 pe-3">
+          <input type="radio" id="radio1" name="radio" checked onclick="Check1()">Ida y Vuelta<span
+            class="checkmark"></span> </label>
+        <label class="option my-sm-0 my-2">
+          <input type="radio" id="radio2" name="radio" onclick="Check1()">Solo ida <span class="checkmark"></span>
+        </label>
+      </div>
+      <!-- Origen -->
+      <div class="form-group d-sm-flex margin">
+        <div class="d-flex align-items-center flex-fill me-sm-1 my-sm-0 my-4 border-bottomXXX position-relative"> <input
+            type="text" required placeholder="Origen" class="form-control">
+          <div class="label" id="from"></div> <span class="fas fa-dot-circle text-muted"></span>
         </div>
-        <div class="form-group d-sm-flex margin">
-            <div class="d-flex align-items-center flex-fill me-sm-1 my-sm-0 my-4 border-bottom position-relative"> <input type="text" required placeholder="Origen" class="form-control">
-                <div class="label" id="from"></div> <span class="fas fa-dot-circle text-muted"></span>
-            </div>
-            <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottom position-relative"> <input type="text" required placeholder="Destino" class="form-control">
-                <div class="label" id="to"></div> <span class="fas fa-map-marker text-muted"></span>
-            </div>
+        <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottomXXX position-relative"> <input
+            type="text" required placeholder="Destino" class="form-control">
+          <div class="label" id="to"></div> <span class="fas fa-map-marker text-muted"></span>
         </div>
-        <div class="form-group d-sm-flex margin">
-            <div class="d-flex align-items-center flex-fill me-sm1 my-sm-0 border-bottom position-relative"> <input type="date" required placeholder="Fecha de salida" class="form-control">
-                <div class="label" id="depart"></div>
-            </div>
-            <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottom position-relative"> <input type="date" required placeholder="Fecha de regreso" class="form-control">
-                <div class="label" id="return"></div>
-            </div>
+      </div>
+      <!-- Destino -->
+      <div class="form-group d-sm-flex margin">
+
+        <!-- Fecha salida -->
+        <div class="col-sm-12 d-flex align-items-center flex-fill me-sm1X my-sm-0 border-bottomXXX position-relative">
+          <input id="departDate" required placeholder="Fecha de salida" class="form-control" onfocus="(this.type='date')"
+            onblur="(this.type='text')" type="text">
+          <div class="label" id="depart"></div>
         </div>
-        <div class="form-group border-bottom d-flex align-items-center position-relative"> <input type="text" required placeholder="Cantidad de personas" class="form-control">
-            <div class="label" id="psngr"></div> <span class="fas fa-users text-muted"></span>
+
+        <!-- Fecha regreso -->
+        <div id="divRD" class="col-sm-12 d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottomXXX position-relative">
+          <input id="returnDate" type="text" required placeholder="Fecha de regreso" class="form-control"
+            onfocus="(this.type='date')" onblur="(this.type='text')">
+          <div class="label" id="return"></div>
         </div>
-        <div class="form-group my-3">
-            <div class="btn btn-primary rounded-0 d-flex justify-content-center text-center p-3">Search Flights </div>
-        </div>
+
+      </div>
+
+
+      <!-- Pasajeros -->
+      <div class="form-group d-flex align-items-center position-relative"> <input type="number" min="1" max="10" required
+          placeholder="Pasajeros" class="form-control" disabled>
+        <div class="label" id="psngr"></div> <span class="fas fa-users text-muted"></span>
+      </div>
+
+      
+      <!-- Boton buscar -->
+      <div class="form-group my-3">
+        <div class="btn btn-primary rounded-0 d-flex justify-content-center text-center p-3">Buscar Vuelos </div>
+      </div>
     </form>
   </div>
   <!-- BUSCADOR DE VUELOS -->
 
 
 
+
+
+  <div class="form-outline">
+    <input type="number" id="typeNumber" class="form-control" />
+    <label class="form-label" for="typeNumber">Number input</label>
+  </div>
 
 
 
@@ -193,8 +229,10 @@ booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking
 
   <!-- CARDS -->
   <div class="card-group w-75 mx-auto my-5">
-    <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+    <div class="card mx-3"
+      style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
+      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap"
+        style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
@@ -202,16 +240,20 @@ booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
-    <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+    <div class="card mx-3"
+      style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
+      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap"
+        style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
-    <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+    <div class="card mx-3"
+      style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
+      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap"
+        style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
@@ -226,8 +268,10 @@ booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking
 
 
   <div class="card-group w-75 mx-auto my-5">
-    <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+    <div class="card mx-3"
+      style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
+      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap"
+        style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
@@ -235,16 +279,20 @@ booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
-    <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+    <div class="card mx-3"
+      style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
+      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap"
+        style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
-    <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+    <div class="card mx-3"
+      style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
+      <img class="card-img-top" src="img/cards/card1.jpg" alt="Card image cap"
+        style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
@@ -319,7 +367,7 @@ booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking
       <!-- Section: Text -->
       <section class="mb-4">
         <p>
-          El mejor precio garantizado, planifique su viaje o haga reservas de última hora en un solo lugar. 
+          El mejor precio garantizado, planifique su viaje o haga reservas de última hora en un solo lugar.
         </p>
       </section>
       <!-- Section: Text -->
@@ -399,7 +447,7 @@ booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking
             </ul>
           </div>
           <!--Grid column-->
-          
+
         </div>
         <!--Grid row-->
       </section>

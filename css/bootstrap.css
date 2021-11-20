@@ -11407,23 +11407,23 @@ input[type="date"] {
 }
 
 .wrapper form .label#from::after {
-    content: 'From'
+    content: 'Origen'
 }
 
 .wrapper form .label#to::after {
-    content: 'To'
+    content: 'Destino'
 }
 
 .wrapper form .label#depart::after {
-    content: 'Depart Date'
+    content: 'Fecha de salida'
 }
 
 .wrapper form .label#return::after {
-    content: 'Return Date'
+    content: 'Fecha de regreso'
 }
 
 .wrapper form .label#psngr::after {
-    content: 'Traveller(s)'
+    content: 'Pasajero(s)'
 }
 
 .wrapper form input[type="text"]:focus~.label::after {
@@ -11455,28 +11455,6 @@ input[type="date"] {
         margin: .2rem 0rem
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* SIGN UP */
-
-
 
 body {
   color: #fff;
@@ -11570,11 +11548,99 @@ body {
 
 
 
+/* ==================================================*/
+/* ==================================================*/
+/* ==================================================*/
+/* PÁGINA: PROFILE.HTML*/
+
+.signup-form2 form {
+  color: #999;
+  border-radius: 3px;
+    margin-bottom: 15px;
+      background: #fff;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+  }
+.signup-form2 h2 {
+  color: #333;
+  font-weight: bold;
+      margin-top: 0;
+  }
+  .signup-form2 hr {
+      margin: 0 -30px 20px;
+  }
+.signup-form2 .form-group {
+  margin-bottom: 20px;
+}
+.signup-form2 label {
+  font-weight: normal;
+  font-size: 13px;
+}
+.signup-form2 .form-control {
+  min-height: 38px;
+  box-shadow: none !important;
+}	
+.signup-form2 .input-group-addon {
+  max-width: 42px;
+  text-align: center;
+}
+.signup-form2 input[type="checkbox"] {
+  margin-top: 2px;
+}   
+  .signup-form2 .btn{        
+      font-size: 16px;
+      font-weight: bold;
+  background: #19aa8d;
+  border: none;
+  min-width: 140px;
+  }
+.signup-form2 .btn:hover, .signup-form2 .btn:focus {
+  background: #179b81;
+      outline: none;
+}
+.signup-form2 a {
+  color: #fff;	
+  text-decoration: underline;
+}
+.signup-form2 a:hover {
+  text-decoration: none;
+}
+.signup-form2 form a {
+  color: #19aa8d;
+  text-decoration: none;
+}	
+.signup-form2 form a:hover {
+  text-decoration: underline;
+}
+.signup-form2 .fa {
+  font-size: 21px;
+}
+.signup-form2 .fa-paper-plane {
+  font-size: 18px;
+}
+.signup-form2 .fa-check {
+  color: #fff;
+  left: 17px;
+  top: 18px;
+  font-size: 7px;
+  position: absolute;
+}
+/* PÁGINA: PROFILE.JS*/
 
 
 
-/* SIGN UP*/ 
+
+
+
+/* ==================================================*/
+/* ==================================================*/
+/* ==================================================*/
+/* PÁGINA: SIGNUP.HTML*/
 
 .container {
   margin-top: 100px
 }
+/* PÁGINA: SIGNUP.HTML*/
+
+
+
