@@ -1,0 +1,304 @@
+/* ==================================================*/
+/* =================    INDEX    ====================*/
+/* ==================================================*/
+
+
+
+/* CAROUSEL */
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+  display: inline-block !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% !important;
+  background-size: 100% 100% !important;
+  filter: invert(100%) !important;
+  border-radius: 200px 200px 200px 200px;
+  background-color: #000000 !important;
+}
+/* CAROUSEL */
+
+
+
+/* BUSCADOR DE VUELOS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 50px auto;
+    border: 0px solid #b5e700;
+    border-radius: 10px;
+    background-color: rgba(181,231,0, 0.7);
+    
+}
+
+.wrapper form {
+    padding: 30px 50px
+}
+
+.wrapper form .form-group {
+    padding-bottom: .5rem
+}
+
+.wrapper form .option {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    display: block
+}
+
+.wrapper form .option input {
+    display: none
+}
+
+.wrapper form .checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 50%
+}
+
+.wrapper form .option input:checked~.checkmark:after {
+    display: block
+}
+
+.wrapper form .option .checkmark:after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    display: block;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    top: 48%;
+    left: 52%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out 0s
+}
+
+.wrapper form .option:hover input[type="radio"]~.checkmark {
+    background-color: #f4f4f4
+}
+
+.wrapper form .option input[type="radio"]:checked~.checkmark {
+    background: #fff;
+    color: #fff;
+    transition: 300ms ease-in-out 0s
+}
+
+.wrapper form .option input[type="radio"]:checked~.checkmark:after {
+    transform: translate(-50%, -50%) scale(1);
+    color: #fff
+}
+
+.wrapper form a {
+    color: #333
+}
+
+.wrapper form .form-control {
+    outline: none;
+    border: none
+}
+
+.wrapper form .form-control:focus {
+    box-shadow: none
+}
+
+.wrapper form input[type="text"]:focus::placeholder {
+    color: transparent
+}
+
+input[type="date"] {
+    cursor: pointer
+}
+
+.wrapper form .label::after {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    font-size: 0.9rem;
+    margin: 0rem 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 600;
+    color: #999;
+    transition: all .2s ease-in-out;
+    transform: scale(0)
+}
+
+.wrapper form .label#from::after {
+    content: 'Origen'
+}
+
+.wrapper form .label#to::after {
+    content: 'Destino'
+}
+
+.wrapper form .label#depart::after {
+    content: 'Fecha de salida'
+}
+
+.wrapper form .label#return::after {
+    content: 'Fecha de regreso'
+}
+
+.wrapper form .label#psngr::after {
+    content: 'Pasajero(s)'
+}
+
+.wrapper form input[type="text"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.wrapper form input[type="date"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.margin {
+    margin: 2rem 0rem
+}
+/* BUSCADOR DE VUELOS */
+
+
+
+
+
+/* ==================================================*/
+/* ==================   PROFILE   ===================*/
+/* ==================================================*/
+
+.signup-form2 {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+  .signup-form2 form {
+    color: #999;
+    border-radius: 3px;
+      margin-bottom: 15px;
+        background: #fff;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+  .signup-form2 h2 {
+    color: #333;
+    font-weight: bold;
+        margin-top: 0;
+    }
+    .signup-form2 hr {
+        margin: 0 -30px 20px;
+    }
+  .signup-form2 .form-group {
+    margin-bottom: 20px;
+  }
+  .signup-form2 label {
+    font-weight: normal;
+    font-size: 13px;
+  }
+  .signup-form2 .form-control {
+    min-height: 38px;
+    box-shadow: none !important;
+  }	
+  .signup-form2 .input-group-addon {
+    max-width: 42px;
+    text-align: center;
+  }
+  .signup-form2 input[type="checkbox"] {
+    margin-top: 2px;
+  }   
+  .signup-form2 .btn{        
+  font-size: 16px;
+  font-weight: bold;
+  background: #19aa8d;
+  border: none;
+  min-width: 140px;
+  }
+  .signup-form2 .btn:hover, .signup-form2 .btn:focus {
+    background: #179b81;
+        outline: none;
+  }
+  .signup-form2 a {
+    color: #fff;	
+    text-decoration: underline;
+  }
+  .signup-form2 a:hover {
+    text-decoration: none;
+  }
+  .signup-form2 form a {
+    color: #19aa8d;
+    text-decoration: none;
+  }	
+  .signup-form2 form a:hover {
+    text-decoration: underline;
+  }
+  .signup-form2 .fa {
+    font-size: 21px;
+    color: #19aa8d;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .signup-form2 .fa-paper-plane {
+    font-size: 18px;
+  }
+  .signup-form2 .fa-check {
+    color: #fff;
+    left: 17px;
+    top: 18px;
+    font-size: 7px;
+    position: absolute;
+  }
+  /* PROFILE */
+  
+  
+  
+  
+  
+/* ==================================================*/
+/* ==================   SIGNUP   ====================*/
+/* ==================================================*/
+  
+.container {
+  margin-top: 100px
+}
+
+/* GOOGLE MAPS */ 
+    #divX {
+    pointer-events: none;
+}
+    
+#map {
+    height: 445px;
+    width: 500px;
+}
+
+#instructions {
+    background-color: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 0 0.5em;
+    font: 400 18px Roboto, Arial, sans-serif;
+    overflow: hidden;
+    padding: 1rem;
+    font-size: small;
+}
+/* GOOGLE MAPS */
+/* SIGNUP */
+  
