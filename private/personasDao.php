@@ -36,30 +36,34 @@ class PersonasDao {
 
         
         try {
-            $sql = sprintf("insert into Personas (PK_cedula, nombre, apellido1, apellido2, fecNacimiento, sexo, observaciones, LASTUSER, LASTMODIFICATION) 
-                                          values (%s,%s,%s,%s,%s,%s,%s,%s,CURDATE())",
-                    $this->labAdodb->Param("PK_cedula"),
-                    $this->labAdodb->Param("nombre"),
-                    $this->labAdodb->Param("apellido1"),
-                    $this->labAdodb->Param("apellido2"),
-                    $this->labAdodb->Param("fecNacimiento"),
-                    $this->labAdodb->Param("sexo"),
-                    $this->labAdodb->Param("observaciones"),
-                    $this->labAdodb->Param("LASTUSER"));
-            $sqlParam = $this->labAdodb->Prepare($sql);
+            $sql = sprintf("insert into Personas (login_name, user_name, user_last_name1, user_last_name2, user_birth_date, user_email, user_work_phone, user_home_phone, user_password, address ) 
+                                          values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+                    $this->easytravel->Param("login_name"),
+                    $this->easytravel->Param("user_name"),
+                    $this->easytravel->Param("user_last_name1"),
+                    $this->easytravel->Param("user_last_name2"),
+                    $this->easytravel->Param("user_birth_date"),
+                    $this->easytravel->Param("user_email"),
+                    $this->easytravel->Param("user_work_phone"),
+                    $this->easytravel->Param("user_home_phone"),
+                    $this->easytravel->Param("user_password"),
+                    $this->easytravel->Param("address"));
+                  
+            $sqlParam = $this->easytravel->Prepare($sql);
 
             $valores = array();
 
-            $valores["PK_cedula"]       = $personas->getPK_cedula();
-            $valores["nombre"]          = $personas->getnombre();
-            $valores["apellido1"]       = $personas->getapellido1();
-            $valores["apellido2"]       = $personas->getapellido2();
-            $valores["fecNacimiento"]   = $personas->getfecNacimiento();
-            $valores["sexo"]            = $personas->getsexo();
-            $valores["observaciones"]   = $personas->getobservaciones();
-            $valores["LASTUSER"]        = $personas->getLastUser();
+            $valores["login_name"]        = $personas->getlogin_name();
+            $valores["user_name"]         = $personas->getuser_name();
+            $valores["user_last_name1"]   = $personas->getuser_last_name1();
+            $valores["user_last_name2"]   = $personas->getuser_last_name2();
+            $valores["user_birth_date"]   = $personas->getuser_birth_date();
+            $valores["user_work_phone"]   = $personas->getuser_work_phone();
+            $valores["user_home_phone"]   = $personas->getuser_home_phone();
+            $valores["user_password"]     = $personas->getuser_password();
+            $valores["address"]           = $personas->getaddress();
 
-            $this->labAdodb->Execute($sqlParam, $valores) or die($this->labAdodb->ErrorMsg());
+            $this->easytravel->Execute($sqlParam, $valores) or die($this->easytravel->ErrorMsg());
         } catch (Exception $e) {
             throw new Exception('No se pudo insertar el registro (Error generado en el metodo add de la clase PersonasDao), error:'.$e->getMessage());
         }

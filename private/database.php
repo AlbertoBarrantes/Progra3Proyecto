@@ -1,12 +1,8 @@
 <?php
 // Las funciones para facilitar las conecciones en las distintas paginas
-  require_once('db_credentials.php');
+  require_once('db_connect.php');
 
-  function db_connect() {
-    $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-    confirm_db_connect();
-    return $connection;
-  }
+
 
   function db_disconnect($connection) {
     if(isset($connection)) {
@@ -19,12 +15,11 @@
   }
 
   function confirm_db_connect() {
-    if(mysqli_connect_errno()) {
-      $msg = "Database connection failed: ";
-      $msg .= mysqli_connect_error();
-      $msg .= " (" . mysqli_connect_errno() . ")";
-      exit($msg);
-    }
+    if ($db) {
+      echo "<p>Connection successful.</p>";
+  } elseif (isset($error)) {
+      echo "<p>$error</p>";
+  }
   }
 
   function confirm_result_set($result_set) {
