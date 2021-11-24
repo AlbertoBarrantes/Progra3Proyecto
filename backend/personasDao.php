@@ -159,29 +159,30 @@ class PersonasDao {
     }
 
     //***********************************************************
-    //busca a una persona en la base de datos
+    //busca a un usuario en la base de datos
     //***********************************************************
 
-    public function searchById(Personas $personas) {
+    public function searchById(User $user) {
         $returnPersonas = null;
         try {
-            $sql = sprintf("select * from Personas where  PK_cedula = %s",
-                            $this->labAdodb->Param("PK_cedula"));
-            $sqlParam = $this->labAdodb->Prepare($sql);
+            $sql = sprintf("select * from User where  id = %s",
+                            $this->easytravel->Param("id"));
+            $sqlParam = $this->easytravel->Prepare($sql);
 
             $valores = array();
-            $valores["PK_cedula"] = $personas->getPK_cedula();
-            $resultSql = $this->labAdodb->Execute($sqlParam, $valores) or die($this->labAdodb->ErrorMsg());
+            $valores["id"] = $personas->getid();
+            $resultSql = $this->easytravel->Execute($sqlParam, $valores) or die($this->easytravel->ErrorMsg());
             
             if ($resultSql->RecordCount() > 0) {
-                $returnPersonas = Personas::createNullPersonas();
-                $returnPersonas->setPK_cedula($resultSql->Fields("PK_cedula"));
-                $returnPersonas->setnombre($resultSql->Fields("nombre"));
-                $returnPersonas->setapellido1($resultSql->Fields("apellido1"));
-                $returnPersonas->setapellido2($resultSql->Fields("apellido2"));
-                $returnPersonas->setfecNacimiento($resultSql->Fields("fecNacimiento"));
-                $returnPersonas->setsexo($resultSql->Fields("sexo"));
-                $returnPersonas->setobservaciones($resultSql->Fields("observaciones"));
+                $returnPersonas = User::createNullPersonas();
+                $returnPersonas->set_id($resultSql->Fields("id"));
+                $returnPersonas->set_name($resultSql->Fields("user_name"));
+                $returnPersonas->set_user_login($resultSql->Fields("user_login"));
+                $returnPersonas->set_user_last_name1($resultSql->Fields("user_last_name1"));
+                $returnPersonas->set_user_last_name2($resultSql->Fields("user_last_name2"));
+                $returnPersonas->set_user_email($resultSql->Fields("user_email"));
+                $returnPersonas->set_user_birth_date($resultSql->Fields("user_birth_date"));
+                $returnPersonas->set_user_password($resultSql->Fields("user_password"));
             }
         } catch (Exception $e) {
             throw new Exception('No se pudo consultar el registro (Error generado en el metodo searchById de la clase PersonasDao), error:'.$e->getMessage());
