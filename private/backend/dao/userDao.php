@@ -1,14 +1,14 @@
 <?php
 
 require_once("adodb5/adodb.inc.php");
-require_once("../domain/personas.php");
+require_once("../domain/user.php");
 
 
 
 //this attribute enable to see the SQL's executed in the data base
 
 
-class userDao {
+class UserDao {
 
     
     private $easytravel;//objeto de conexion con la base de datos    
@@ -69,7 +69,7 @@ class userDao {
 
             $this->easytravel->Execute($sqlParam, $valores) or die($this->easytravel->ErrorMsg());
         } catch (Exception $e) {
-            throw new Exception('No se pudo insertar el registro (Error generado en el metodo add de la clase PersonasDao), error:'.$e->getMessage());
+            throw new Exception('No se pudo insertar el registro (Error generado en el metodo add de la clase UserDao), error:'.$e->getMessage());
         }
     }
 
@@ -85,7 +85,7 @@ class userDao {
             $sqlParam = $this->easytravel->Prepare($sql);
 
             $valores = array();
-            $valores["login_name"] = $user->getlogin_name();
+            $valores["id"] = $user->getid();
 
             $resultSql = $this->easytravel->Execute($sqlParam, $valores) or die($this->easytravel->ErrorMsg());
             if ($resultSql->RecordCount() > 0) {
@@ -93,7 +93,7 @@ class userDao {
             }
             return $exist;
         } catch (Exception $e) {
-            throw new Exception('No se pudo obtener el registro (Error generado en el metodo exist de la clase PersonasDao), error:'.$e->getMessage());
+            throw new Exception('No se pudo obtener el registro (Error generado en el metodo exist de la clase UserDao), error:'.$e->getMessage());
         }
     }
 
@@ -121,7 +121,8 @@ class userDao {
                     $this->easytravel->Param("user_birth_date"),
                     $this->easytravel->Param("address"),
                     $this->easytravel->Param("user_home_phone"),
-                    $this->easytravel->Param("user_work_phone"));
+                    $this->easytravel->Param("user_work_phone"),
+                    $this->easytravel->Param("id"));
             $sqlParam = $this->easytravel->Prepare($sql);
 
             $valores = array();
@@ -138,7 +139,29 @@ class userDao {
             $valores["id"]                    = $user->getid();
             $this->easytravel->Execute($sqlParam, $valores) or die($this->easytravel->ErrorMsg());
         } catch (Exception $e) {
-            throw new Exception('No se pudo actualizar el registro (Error generado en el metodo update de la clase PersonasDao), error:'.$e->getMessage());
+            throw new Exception('No se pudo actualizar el registro (Error generado en el metodo update de la clase UserDao), error:'.$e->getMessage());
+        }
+    }
+
+    //***********************************************************
+    //modifica una la foto de la base de datos
+    //***********************************************************
+
+    public function updatefoto(User $User) {
+        try {
+            $sql = sprintf("update User set user_profile_picture = %s, 
+                            where id = %s",
+                    $this->easytravel->Param("user_profile_picture"),
+                    $this->easytravel->Param("id"));
+            $sqlParam = $this->easytravel->Prepare($sql);
+
+            $valores = array();
+
+            $valores["user_profile_picture"]       = $user->getuser_profile_picture();
+            $valores["id"]                    = $user->getid();
+            $this->easytravel->Execute($sqlParam, $valores) or die($this->easytravel->ErrorMsg());
+        } catch (Exception $e) {
+            throw new Exception('No se pudo actualizar el registro (Error generado en el metodo update de la clase UserDao), error:'.$e->getMessage());
         }
     }
 
@@ -150,7 +173,7 @@ class userDao {
 
         
         try {
-            $sql = sprintf("delete from Personas where  id = %s",
+            $sql = sprintf("delete from user where  id = %s",
                             $this->easytravel->Param("id"));
             $sqlParam = $this->easytravel->Prepare($sql);
             $valores = array();
@@ -158,7 +181,7 @@ class userDao {
 
             $this->easytravel->Execute($sqlParam, $valores) or die($this->easytravel->ErrorMsg());
         } catch (Exception $e) {
-            throw new Exception('No se pudo eliminar el registro (Error generado en el metodo delete de la clase PersonasDao), error:'.$e->getMessage());
+            throw new Exception('No se pudo eliminar el registro (Error generado en el metodo delete de la clase UserDao), error:'.$e->getMessage());
         }
     }
 
@@ -166,39 +189,41 @@ class userDao {
     //busca a una persona en la base de datos
     //***********************************************************
     public function searchById(User $user) {
-        $returnPersonas = null;
+        $returnUser = null;
         try {
-            $sql = sprintf("select * from User where  id = %s",
+            $sql = sprintf("select * from user where  id = %s",
                             $this->easytravel->Param("id"));
             $sqlParam = $this->easytravel->Prepare($sql);
 
             $valores = array();
-            $valores["id"] = $personas->getid();
+            $valores["id"] = $user->getid();
             $resultSql = $this->easytravel->Execute($sqlParam, $valores) or die($this->easytravel->ErrorMsg());
 
             if ($resultSql->RecordCount() > 0) {
-                $returnPersonas = User::createNullPersonas();
-                $returnPersonas->set_id($resultSql->Fields("id"));
-                $returnPersonas->set_name($resultSql->Fields("user_name"));
-                $returnPersonas->set_userlogin($resultSql->Fields("user_login"));
-                $returnPersonas->set_user_last_name1($resultSql->Fields("user_last_name1"));
-                $returnPersonas->set_user_last_name2($resultSql->Fields("user_last_name2"));
-                $returnPersonas->set_user_email($resultSql->Fields("user_email"));
-                $returnPersonas->set_user_birth_date($resultSql->Fields("user_birth_date"));
-                $returnPersonas->set_user_password($resultSql->Fields("user_password"));
+                $returnUser = User::createNullUser();
+                $returnUser->setid($resultSql->Fields("id"));
+                $returnUser->setuser_name($resultSql->Fields("user_name"));
+                $returnUser->setlogin_name($resultSql->Fields("login_name"));
+                $returnUser->setuser_last_name1($resultSql->Fields("user_last_name1"));
+                $returnUser->setuser_last_name2($resultSql->Fields("user_last_name2"));
+                $returnUser->setuser_email($resultSql->Fields("user_email"));
+                $returnUser->setuser_birth_date($resultSql->Fields("user_birth_date"));
+                $returnUser->setuser_password($resultSql->Fields("user_password"));
+                $returnUser->setuser_profile_picture($resultSql->Fields("user_profile_picture"));
+                $returnUser->setuser_address($resultSql->Fields("address"));
             }       
         } catch (Exception $e) {
-            throw new Exception('No se pudo consultar el registro (Error generado en el metodo searchById de la clase PersonasDao), error:'.$e->getMessage());
+            throw new Exception('No se pudo consultar el registro (Error generado en el metodo searchById de la clase UserDao), error:'.$e->getMessage());
         }
-        return $returnPersonas;
+        return $returnUser;
     }
 
     //**
-    //obtiene la información de las personas en la base de datos
+    //obtiene la información de las user en la base de datos
     //**
 
     //***********************************************************
-    //obtiene la información de las personas en la base de datos
+    //obtiene la información de las user en la base de datos
     //***********************************************************
     
     public function getAll() {
@@ -207,7 +232,7 @@ class userDao {
             $resultSql = $this->easytravel->Execute($sql);
             return $resultSql;
         } catch (Exception $e) {
-            throw new Exception('No se pudo obtener los registros (Error generado en el metodo getAll de la clase PersonasDao), error:'.$e->getMessage());
+            throw new Exception('No se pudo obtener los registros (Error generado en el metodo getAll de la clase UserDao), error:'.$e->getMessage());
         }
     }
 

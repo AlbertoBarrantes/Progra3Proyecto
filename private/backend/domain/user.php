@@ -3,7 +3,7 @@
 require_once("baseDomain.php");
 
 
-class Personas extends BaseDomain implements \JsonSerializable{
+class User extends BaseDomain implements \JsonSerializable{
 
     //attributes
     private $id;
@@ -24,12 +24,12 @@ class Personas extends BaseDomain implements \JsonSerializable{
         parent::__construct();
     }
 
-    public static function createNullPersonas() {
+    public static function createNullUser() {
         $instance = new self();
         return $instance;
     }
 
-    public static function createPersonas($id, $user_name, $login_name, $user_last_name1, $user_last_name2, $user_email, $user_birth_name, $user_password, $address, $user_work_phone, $user_home_phone, $ultUsuario, $ultModificacion, $lastUser, $lastModification) {
+    public static function createUser($id, $user_name, $login_name, $user_last_name1, $user_last_name2, $user_email, $user_birth_name, $user_password, $address, $user_work_phone, $user_home_phone) {
         $instance = new self();
         $instance->id                   = $id;
         $instance->user_name            = $user_name;
@@ -42,8 +42,7 @@ class Personas extends BaseDomain implements \JsonSerializable{
         $instance->address              = $address;
         $instance->user_work_phone      = $user_work_phone;
         $instance->user_home_phone      = $user_home_phone;
-        $instance->setLastUser($ultUsuario);
-        $instance->setLastModification($ultModificacion);
+        $instance->user_profile_picture = $user_profile_picture;
         return $instance;
     }
 
@@ -129,6 +128,24 @@ class Personas extends BaseDomain implements \JsonSerializable{
     }
 
     /****************************************************************************/
+    public function getuser_address() {
+        return $this->address;
+    }
+
+    public function setuser_address($address) {
+        $this->address = $address;
+    }
+
+    /****************************************************************************/
+    public function getuser_profile_picture() {
+        return $this->user_profile_picture;
+    }
+
+    public function setuser_profile_picture($user_profile_picture) {
+        $this->user_profile_picture = $user_profile_picture;
+    }
+
+    /****************************************************************************/
     public function getuser_work_phone() {
         return $this->user_work_phone;
     }
@@ -146,14 +163,7 @@ class Personas extends BaseDomain implements \JsonSerializable{
         $this->user_home_phone = $user_home_phone;
     }
 
-    /****************************************************************************/
-    public function getUltUsuario() {
-        return $this->user_password;
-    }
 
-    public function setUltUsuario($ultUsuario) {
-        $this->ultUsuario = $ultUsuario;
-    }
 
     /****************************************************************************/
     //Convertir el obj a JSON

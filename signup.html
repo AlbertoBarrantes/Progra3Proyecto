@@ -65,32 +65,39 @@
 
   <!-- SIGN UP -->
   <div class="my-5 signup-form2 shadow">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form role="form" onsubmit="return false;" id="formUser"action="/private/backend/controller/userController.php" method="post">
       <h2>Registro</h2>
       <p>Por favor llene el formulario para crear una cuenta!</p>
       <hr>
 
       <div class="row">
         <div class="col-md-6 col-xs-12">
+          <!-- Cedula -->
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control" name="id" placeholder="Cedula" required="required">
+            </div>
+          </div>
           <!-- usuario -->
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-              <input type="text" class="form-control" name="username" placeholder="Usuario" required="required">
+              <input type="text" class="form-control" name="login_name" placeholder="Usuario" required="required">
             </div>
           </div>
           <!-- nombre -->
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control" name="name" placeholder="Nombre" required="required">
+              <input type="text" class="form-control" name="user_name" placeholder="Nombre" required="required">
             </div>
           </div>
           <!-- primer apellido -->
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control" name="plastname" placeholder="Primer apellido"
+              <input type="text" class="form-control" name="user_last_name1" placeholder="Primer apellido"
                 required="required">
             </div>
           </div>
@@ -98,7 +105,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control" name="slastname" placeholder="Segundo apellido"
+              <input type="text" class="form-control" name="user_last_name2" placeholder="Segundo apellido"
                 required="required">
             </div>
           </div>
@@ -106,7 +113,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-              <input type="date" class="form-control" id="startDate" required="required" />
+              <input type="date" class="form-control" id="user_birth_date" required="required" />
               <span id="startDateSelected"></span>
             </div>
           </div>
@@ -114,7 +121,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-              <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+              <input type="email" class="form-control" name="user_email" placeholder="Email" required="required">
             </div>
           </div>
           <!-- teléfono de trabajo -->
@@ -137,7 +144,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input type="text" class="form-control" name="password" placeholder="Contraseña" required="required">
+              <input type="text" class="form-control" name="user_password" placeholder="Contraseña" required="required" autocomplete="off">
             </div>
           </div>
         </div>
@@ -146,7 +153,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-map-marked-alt"> </i></span>
-              <input id="address" type="text" class="form-control" name="username" placeholder="Dirección"
+              <input id="address" type="text" class="form-control" name="address" placeholder="Dirección"
                 required="required">
             </div>
           </div>
@@ -158,8 +165,11 @@
           </div>
         </div>
         <!-- botón registrarse -->
+
         <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+          <input type="hidden" id="typeAction" value="add_user" />
+          <button type="submit" class="btn btn-primary btn-lg" id="enviar">Registrarse</button>
+          <button type="reset" class="btn btn-primary btn-lg">Borrar campos</button>
         </div>
       </div>
     </form>
