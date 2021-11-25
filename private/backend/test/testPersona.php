@@ -6,22 +6,26 @@
  * and open the template in the editor.
  */
 
-require_once ("../bo/personasBo.php");
-require_once ("../domain/personas.php");
+require_once ("../bo/userBo.php");
+require_once ("../domain/user.php");
 
-$obj_persona = new Personas();
-$obj_persona->setPK_cedula(121212);
-$obj_persona->setNombre("Cristhian mod");
-$obj_persona->setApellido1("Garita");
-$obj_persona->setApellido2("Fonseca");
-$obj_persona->setSexo(1);
-$obj_persona->setObservaciones("Prueba");
-$obj_persona->setFecNacimiento("19850830");
-$obj_persona->setLastUser("chgari");
+$obj_persona = new User();
+$obj_persona->setid(121212);
+$obj_persona->setuser_name("Cristhian mod");
+$obj_persona->setlogin_name("Cristhian mod");
+$obj_persona->setuser_last_name1("Cristhian mod");
+$obj_persona->setuser_last_name2("Cristhian mod");
+$obj_persona->setuser_email("Cristhian mod");
+$obj_persona->setuser_password("Cristhian mod");
+$obj_persona->setuser_address("Cristhian mod");
+$obj_persona->setuser_home_phone("Cristhian mod");
+$obj_persona->setuser_work_phone("Cristhian mod");
 
-$bo_persona = new PersonasBo();
 
-$operacion = 4; //variable para pruebas
+
+$bo_persona = new UserBo();
+
+$operacion = 1; //variable para pruebas
 
 switch ($operacion) {
     case 1: //Prueba para guardar en la base de datos

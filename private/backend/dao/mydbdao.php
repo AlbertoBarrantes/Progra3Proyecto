@@ -46,6 +46,7 @@ class UserDao {
                     $this->easytravel->Param("user_last_name1"),
                     $this->easytravel->Param("user_last_name2"),
                     $this->easytravel->Param("user_email"),
+
                     $this->easytravel->Param("user_password"),
                     $this->easytravel->Param("address"),
                     $this->easytravel->Param("user_home_phone"),
@@ -62,7 +63,7 @@ class UserDao {
             $valores["user_email"]           = $user->getuser_email();
             $valores["user_birth_date"]      = $user->getuser_birth_date();
             $valores["user_password"]        = $user->getuser_password();
-            $valores["address"]              = $user->getuser_address();
+            $valores["address"]              = $user->getaddress();
             $valores["user_home_phone"]      = $user->getuser_home_phone();
             $valores["user_work_phone"]      = $user->getuser_work_phone();
 

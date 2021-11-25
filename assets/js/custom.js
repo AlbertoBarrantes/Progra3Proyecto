@@ -189,9 +189,9 @@ function Check1() {
 /* ==================================================*/
 
 
-let startDate = document.getElementById('startDate')
+// let startDate = document.getElementById('starDate')
 
-startDate.addEventListener('change',(e)=>{
-  let startDateVal = e.target.value
-  document.getElementById('startDateSelected').innerText = startDateVal
-})
+// startDate.addEventListener('change',(e)=>{
+//   let startDateVal = e.target.value
+//   document.getElementById('startDateSelected').innerText = startDateVal
+// })
