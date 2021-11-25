@@ -1,5 +1,5 @@
 <?php
-
+require_once ("../../db_connect.php");
 require_once("adodb5/adodb.inc.php");
 require_once("../domain/user.php");
 
@@ -33,7 +33,7 @@ class UserDao {
     //agrega a una persona a la base de datos
     //***********************************************************
 
-    public function add(User $user) {
+    public function add(PDO $user) {
         try {
             $sql = sprintf("insert into easytravel.user (id, user_name, 
             login_name, user_last_name1, user_last_name2, 
