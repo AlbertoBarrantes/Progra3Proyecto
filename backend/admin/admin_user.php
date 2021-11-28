@@ -43,8 +43,8 @@ require_once('admin_header.php');
                             <div class="col-md-12">
 
                                 <div class="form-group" id="groupPK_cedula">
-                                    <label for="txtPK_cedula">Cédula</label>
-                                    <input type="text" class="form-control" id="txtPK_cedula"  placeholder="Cédula">
+                                    <label for="txtPK_cedula">Nombre de usuario</label>
+                                    <input type="text" class="form-control" id="txtPK_cedula"  placeholder="Nombre de usuario">
                                 </div>
                                 <div class="form-group" id="groupnombre">
                                     <label for="txtnombre">Nombre</label>
@@ -63,12 +63,16 @@ require_once('admin_header.php');
                                     <input type="text" class="form-control" id="txtfecNacimiento"  placeholder="Fec. Nacimiento">
                                 </div>
                                 <div class="form-group" id="groupsexo">
-                                    <label for="txtsexo">Sexo</label>
-                                    <input type="text" class="form-control" id="txtsexo"  placeholder="Sexo">
+                                    <label for="txtsexo">Correo electronico</label>
+                                    <input type="text" class="form-control" id="txtsexo"  placeholder="Correo electronico">
                                 </div>
                                 <div class="form-group" id="groupobservaciones">
-                                    <label for="txtobservaciones">Observaciones</label>
-                                    <input type="text" class="form-control" id="txtobservaciones"  placeholder="Observaciones">
+                                    <label for="txtobservaciones">Telefono de trabajo</label>
+                                    <input type="text" class="form-control" id="txtobservaciones"  placeholder="Telefono de trabajo">
+                                </div>
+                                <div class="form-group" id="groupobservaciones">
+                                    <label for="txtobservaciones">Telefono celular</label>
+                                    <input type="text" class="form-control" id="txtobservaciones"  placeholder="Telefono celular">
                                 </div>
                                 <div class="form-group">
                                     <input type="hidden" id="typeAction" value="add_personas" />
@@ -90,12 +94,15 @@ require_once('admin_header.php');
                     <table id="dt_personas"  class="table  table-hover dt-responsive nowrap" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>CEDULA</th>
+                                <th>id</th>
+                                <th>NOMBRE DE USUARIO</th>
                                 <th>NOMBRE</th>
                                 <th>APELLIDO1</th>
                                 <th>APELLIDO2</th>
                                 <th>FEC. NACIMIENTO</th>
-                                <th>SEXO</th>
+                                <th>EMAIL</th>
+                                <th>TELEFNO TRABAJO</th>
+                                <th>TELEFONO CELULAR</th>
                                 <th>ACCION</th>
                             </tr>
                         </thead>

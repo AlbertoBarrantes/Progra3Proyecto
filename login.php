@@ -1,24 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Easy Travel</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/icons/png/36x36.png">
-    <meta name="description" content="Agencia de Viajes">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-    <!-- CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
-  
-    <!-- Icons-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  
-    <!-- JavaScript -->
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/custom.js"></script>
+<?php 
+$page_title = 'Inicio de sesion'; 
+require_once('backend/public/public_header.php');
+
+?>
   
   </head>
 
@@ -47,7 +31,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-2">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../Progra3Proyecto/index.html"><img src="assets/img/icons/nav/nav.png"></a>
+          <a class="navbar-brand" href="../Progra3Proyecto/index.php"><img src="assets/img/icons/nav/nav.png"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,7 +45,7 @@
 
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/signup.html">Registrarse</a>
+                <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/signup.php">Registrarse</a>
               </li>
 
             </ul>
@@ -92,6 +76,10 @@
     </main>
 
 
-    
+<?php 
+
+require_once('backend/public/public_footer.php');
+
+?>
   </body>
 </html>

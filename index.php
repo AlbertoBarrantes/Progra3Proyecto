@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html>
+<?php 
+$page_title = 'Inicio'; 
+require_once('backend/public/public_header.php');
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Easy Travel</title>
-  <link rel="icon" type="image/x-icon" href="assets/img/icons/png/36x36.png">
-  <meta name="description" content="Agencia de Viajes">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- CSS -->
-  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
-
-  <!-- Icons-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
-  <!-- JavaScript -->
-  <script src="assets/js/bootstrap.js"></script>
-  <script src="assets/js/custom.js"></script>
+?>
 
 </head>
 
@@ -47,10 +30,10 @@
 
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/signup.html">Registrarse</a>
+              <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/signup.php">Registrarse</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/login.html">Acceder a mi cuenta</a>
+              <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/login.php">Acceder a mi cuenta</a>
             </li>
           </ul>
 
@@ -298,123 +281,11 @@
 
 
 
-  <!-- FOOTER-->
-  <footer class="bg-dark text-center text-white mt-5">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!-- Section: Social media -->
+<?php 
 
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" target="_blank"
-          role="button"><i class="bi bi-facebook"></i></a>
+require_once('backend/public/public_footer.php');
 
-        <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Twitter.com" target="_blank"
-          role="button"><i class="bi bi-twitter"></i></a>
-
-        <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Instagram.com" target="_blank"
-          role="button"><i class="bi bi-instagram"></i></a>
-
-      </section>
-      <!-- Section: Social media -->
-
-
-      <!-- Section: Text -->
-      <section class="mb-4">
-        <p>
-          El mejor precio garantizado, planifique su viaje o haga reservas de última hora en un solo lugar.
-        </p>
-      </section>
-      <!-- Section: Text -->
-
-      <!-- Section: Links -->
-      <section class="">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Contáctenos</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="tel:+50658679852" class="text-decoration-none">Teléfono: +506 5555 5555</a>
-              </li>
-              <li>
-                <a href="https://wa.me/50655555555" class=" text-decoration-none">Whatsapp: +506 5555 5555</a>
-              </li>
-              <li>
-                <a href="mailto:aero555@aero.com" class="text-decoration-none">Correo: aero555@aero.com</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-      </section>
-      <!-- Section: Links -->
-    </div>
-    <!-- Grid container -->
-
-
-  </footer>
-  <!-- Footer -->
+?>
 
 </body>
 
