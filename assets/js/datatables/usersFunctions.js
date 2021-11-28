@@ -43,13 +43,15 @@ function addOrUpdateUsers() {
             url: '../../../backend/controller/usersController.php',
             data: {
                 action:                          $("#typeAction").val(),
-                Cedula:                          $("#txtCedula").val(),
-                Nombre:                          $("#txtNombre").val(),
-                Apellido1:                       $("#txtApellido1").val(),
-                Apellido2:                       $("#txtApellido2").val(),
-                Telefono:                        $("#txtTelefono").val(),
-                Correo_Electronico:              $("#txtCorreo").val(),
-                Tipo_Usuario:                    $("#txtTipousuario").val()
+                username:                        $("#txtusername").val(),
+                name:                            $("#txtname").val(),
+                last_name1:                      $("#txtlast_name1").val(),
+                last_name2:                      $("#txtlast_name2").val(),
+                email:                           $("#txtemail").val(),
+                birth_date:                      $("#txtbirth_date").val(),
+                address:                         $("#txtaddress").val(),
+                work_phone:                      $("#txtwork_phone").val(),
+                personal_phone:                  $("#txtpersonal_phone").val()
             },
             error: function () { //si existe un error en la respuesta del ajax
                 swal("Error", "Se presento un error al enviar la informacion", "error");
@@ -81,34 +83,41 @@ function validar() {
     
     //valida cada uno de los campos del formulario
     //Nota: Solo si fueron digitados
-    if ($("#txtCedula").val() === "") {
+    if ($("#txtusername").val() === "") {
         validacion = false;
     }
 
-    if ($("#txtNombre").val() === "") {
+    if ($("#txtname").val() === "") {
         validacion = false;
     }
 
-    if ($("#txtApellido1").val() === "") {
+    if ($("#txtlast_name1").val() === "") {
         validacion = false;
     }
 
-    if ($("#txtApellido2").val() === "") {
+    if ($("#txtlast_name2").val() === "") {
         validacion = false;
     }
 
-    if ($("#txtTelefono").val() === "") {
+    if ($("#txtbirth_date").val() === "") {
         validacion = false;
     }
 
-    if ($("#txtCorreo").val() === "") {
+    if ($("#txtemail").val() === "") {
         validacion = false;
     }
 
-    if ($("#txtTipousuario").val() === "") {
+    if ($("#txtaddress").val() === "") {
         validacion = false;
     }
 
+    if ($("#txtwork_phone").val() === "") {
+        validacion = false;
+    } 
+
+    if ($("#txtpersonal_phone").val() === "") {
+        validacion = false;
+    }
 
     return validacion;
 }
@@ -116,7 +125,7 @@ function validar() {
 //*****************************************************************
 //*****************************************************************
 
-function clearFormUserss() {
+function clearFormUsers() {
     $('#formUsers').trigger("reset");
 }
 
@@ -148,14 +157,16 @@ function showUsersByID(Cedula) {
         },
         success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
             var objUsersJSon = JSON.parse(data);
-            $("#txtCedula").val(objUsersJSon.Cedula);
-            $("#txtNombre").val(objUsersJSon.Nombre);
-            $("#txtApellido1").val(objUsersJSon.Apellido1);
-            $("#txtApellido2").val(objUsersJSon.Apellido2);
-            $("#txtTelefono").val(objUsersJSon.Telefono);
-            $("#txtCorreo").val(objUserssJSon.Correo_Electronico);
-            $("#txtTipousuario").val(objUsersJSon.Tipo_Usuario);
-            $("#typeAction").val("update_Users");
+            $("#txtusername").val(objUsersJSon.username);
+            $("#txtname").val(objUsersJSon.name);
+            $("#txtlast_name1").val(objUsersJSon.last_name1);
+            $("#txtlast_name2").val(objUsersJSon.last_name2);
+            $("#txtemail").val(objUsersJSon.email);
+            $("#txtbirth_date").val(objUserssJSon.birth_date);
+            $("#txtaddress").val(objUsersJSon.address);
+            $("#txtwork_phone").val(objUsersJSon.work_phone);
+            $("#txtpersonal_phone").val(objUsersJSon.personal_phone);
+            $("#typeAction").val("update_users");
             
             swal("Confirmacion", "Los datos de la persona fueron cargados correctamente", "success");
         },
@@ -166,13 +177,13 @@ function showUsersByID(Cedula) {
 //*****************************************************************
 //*****************************************************************
 
-function deleteUsersByID(Cedula) {
+function deleteUsersByID(username) {
     //Se envia la información por ajax
     $.ajax({
         url: '../../../backend/controller/usersController.php',
         data: {
             action: "delete_users",
-            Cedula: Cedula
+            username: username
         },
         error: function () { //si existe un error en la respuesta del ajax
             swal("Error", "Se presento un error al eliminar la informacion", "error");

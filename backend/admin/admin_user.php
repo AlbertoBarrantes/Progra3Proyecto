@@ -70,15 +70,19 @@ require_once('admin_header.php');
                                     <input type="text" class="form-control" id="txtemail"  placeholder="Correo electronico">
                                 </div>
                                 <div class="form-group" id="groupaddress">
-                                    <label for="txtaddress">Telefono de trabajo</label>
-                                    <input type="text" class="form-control" id="txtaddress"  placeholder="Telefono de trabajo">
+                                    <label for="txtaddress">Direccion</label>
+                                    <input type="text" class="form-control" id="txtaddress"  placeholder="Direccion">
                                 </div>
                                 <div class="form-group" id="groupwork_phone">
-                                    <label for="txtobservaciones">Telefono celular</label>
-                                    <input type="text" class="form-control" id="txtobservaciones"  placeholder="Telefono celular">
+                                    <label for="txtwork_phone">Telefono de trabajo</label>
+                                    <input type="text" class="form-control" id="txtwork_phone"  placeholder="Telefono de trabajo">
+                                </div>
+                                <div class="form-group" id="grouppersonal_phone">
+                                    <label for="txtpersonal_phone">Telefono celular</label>
+                                    <input type="text" class="form-control" id="txtpersonal_phone"  placeholder="Telefono celular">
                                 </div>
                                 <div class="form-group">
-                                    <input type="hidden" id="typeAction" value="add_personas" />
+                                    <input type="hidden" id="typeAction" value="add_users" />
                                     <button type="submit" class="btn btn-primary" id="enviar">Guardar</button>
                                     <button type="reset" class="btn btn-danger" id="cancelar">Cancelar</button>
                                 </div>
@@ -97,13 +101,14 @@ require_once('admin_header.php');
                     <table id="dt_personas"  class="table  table-hover dt-responsive nowrap" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>id</th>
+                                <th>ID</th>
                                 <th>NOMBRE DE USUARIO</th>
                                 <th>NOMBRE</th>
                                 <th>APELLIDO1</th>
                                 <th>APELLIDO2</th>
                                 <th>FEC. NACIMIENTO</th>
                                 <th>EMAIL</th>
+                                <th>DIRECCION</th>
                                 <th>TELEFNO TRABAJO</th>
                                 <th>TELEFONO CELULAR</th>
                                 <th>ACCION</th>
