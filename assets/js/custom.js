@@ -189,9 +189,28 @@ function Check1() {
 /* ==================================================*/
 
 
-// let startDate = document.getElementById('starDate')
+//let startDate = document.getElementById('startDate')
 
-// startDate.addEventListener('change',(e)=>{
-//   let startDateVal = e.target.value
-//   document.getElementById('startDateSelected').innerText = startDateVal
-// })
+//startDate.addEventListener('change',(e)=>{
+//  let startDateVal = e.target.value
+//  document.getElementById('startDateSelected').innerText = startDateVal
+//})
+
+//document.getElementById("user").disabled = false;
+
+
+function clickTest() {
+
+  alert("Prueba de Formulario"
+      + "\nusername: " + document.getElementById("username").value
+      + "\nname: " + document.getElementById("name").value
+      + "\nflastname: " + document.getElementById("flastname").value
+      + "\nslastname: " + document.getElementById("slastname").value
+      + "\nstartDate: " + document.getElementById("startDate").value
+      + "\nemail: " + document.getElementById("email").value
+      + "\nphoneWork: " + document.getElementById("phoneWork").value
+      + "\nphonePersonal: " + document.getElementById("phonePersonal").value
+      + "\npassword: " + document.getElementById("password").value
+      + "\naddress: " + document.getElementById("address").value
+      );
+}
