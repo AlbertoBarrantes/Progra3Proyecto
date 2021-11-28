@@ -1,7 +1,9 @@
 <?php  
+$page_title = 'Usuarios'; 
 require_once('admin_header.php');
 
 ?>
+
     <body>
 
         <!-- ********************************************************** -->
@@ -24,7 +26,7 @@ require_once('admin_header.php');
         </div>
         <div class="container">
             <div class="page-header">
-                <h1><h1><Nombre Sistema><small> Mantenimiento de Personas</small><img src="img/logo/logo.png" align="right"/></h1></h1>
+                <h1><h1><Nombre Sistema><small> Mantenimiento de Usuarios</small><img src="img/logo/logo.png" align="right"/></h1></h1>
             </div>  
             
             <!-- ********************************************************** -->

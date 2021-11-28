@@ -1,7 +1,7 @@
 
 <html>
 <head>
-    <title>Mantenimiento de Personas</title>
+    <title>Mantenimiento <?php if(isset($page_title)) { echo '- ' . $page_title; } ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
