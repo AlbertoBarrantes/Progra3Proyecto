@@ -5,7 +5,7 @@
 $(function () { //para la creación de los controles
     //agrega los eventos las capas necesarias
     $("#enviar").click(function () {
-        addOrUpdatePersonas();
+        addOrUpdateUsers();
     });
     //agrega los eventos las capas necesarias
     $("#cancelar").click(function () {
@@ -14,8 +14,8 @@ $(function () { //para la creación de los controles
 
     $("#btMostarForm").click(function () {
         //muestra el fomurlaior
-        clearFormPersonas();
-        $("#typeAction").val("add_personas");
+        clearFormUsers();
+        $("#typeAction").val("add_users");
         $("#myModalFormulario").modal();
     });
     
@@ -36,11 +36,11 @@ $(document).ready(function () {
 //Agregar o modificar la información
 //*********************************************************************
 
-function addOrUpdatePersonas() {
+function addOrUpdateUsers() {
     //Se envia la información por ajax
     if (validar()) {
         $.ajax({
-            url: 'Backend/controller/personasController.php',
+            url: '../../../backend/controller/usersController.php',
             data: {
                 action:                          $("#typeAction").val(),
                 Cedula:                          $("#txtCedula").val(),
@@ -60,8 +60,8 @@ function addOrUpdatePersonas() {
                 var typeOfMessage = messageComplete.substring(0, 2);
                 if (typeOfMessage === "M~") { //si todo esta corecto
                     swal("Confirmacion", responseText, "success");
-                    clearFormPersonas();
-                    $("#dt_personas").DataTable().ajax.reload();
+                    clearFormUsers();
+                    $("#dt_Users").DataTable().ajax.reload();
                 } else {//existe un error
                     swal("Error", responseText, "error");
                 }
@@ -116,8 +116,8 @@ function validar() {
 //*****************************************************************
 //*****************************************************************
 
-function clearFormPersonas() {
-    $('#formPersonas').trigger("reset");
+function clearFormUserss() {
+    $('#formUsers').trigger("reset");
 }
 
 //*****************************************************************
@@ -125,8 +125,8 @@ function clearFormPersonas() {
 
 function cancelAction() {
     //clean all fields of the form
-    clearFormPersonas();
-    $("#typeAction").val("add_personas");
+    clearFormUsers();
+    $("#typeAction").val("add_users");
     $("#myModalFormulario").modal("hide");
 }
 
@@ -135,27 +135,27 @@ function cancelAction() {
 //*****************************************************************
 //*****************************************************************
 
-function showPersonasByID(Cedula) {
+function showUsersByID(Cedula) {
     //Se envia la información por ajax
     $.ajax({
-        url: 'Backend/controller/personasController.php',
+        url: '../../../backend/controller/usersController.php',
         data: {
-            action: "show_personas",
+            action: "show_users",
             Cedula: Cedula
         },
         error: function () { //si existe un error en la respuesta del ajax
             swal("Error", "Se presento un error al consultar la informacion", "error");
         },
         success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
-            var objPersonasJSon = JSON.parse(data);
-            $("#txtCedula").val(objPersonasJSon.Cedula);
-            $("#txtNombre").val(objPersonasJSon.Nombre);
-            $("#txtApellido1").val(objPersonasJSon.Apellido1);
-            $("#txtApellido2").val(objPersonasJSon.Apellido2);
-            $("#txtTelefono").val(objPersonasJSon.Telefono);
-            $("#txtCorreo").val(objPersonasJSon.Correo_Electronico);
-            $("#txtTipousuario").val(objPersonasJSon.Tipo_Usuario);
-            $("#typeAction").val("update_personas");
+            var objUsersJSon = JSON.parse(data);
+            $("#txtCedula").val(objUsersJSon.Cedula);
+            $("#txtNombre").val(objUsersJSon.Nombre);
+            $("#txtApellido1").val(objUsersJSon.Apellido1);
+            $("#txtApellido2").val(objUsersJSon.Apellido2);
+            $("#txtTelefono").val(objUsersJSon.Telefono);
+            $("#txtCorreo").val(objUserssJSon.Correo_Electronico);
+            $("#txtTipousuario").val(objUsersJSon.Tipo_Usuario);
+            $("#typeAction").val("update_Users");
             
             swal("Confirmacion", "Los datos de la persona fueron cargados correctamente", "success");
         },
@@ -166,12 +166,12 @@ function showPersonasByID(Cedula) {
 //*****************************************************************
 //*****************************************************************
 
-function deletePersonasByID(Cedula) {
+function deleteUsersByID(Cedula) {
     //Se envia la información por ajax
     $.ajax({
-        url: 'Backend/controller/personasController.php',
+        url: '../../../backend/controller/usersController.php',
         data: {
-            action: "delete_personas",
+            action: "delete_users",
             Cedula: Cedula
         },
         error: function () { //si existe un error en la respuesta del ajax
@@ -182,8 +182,8 @@ function deletePersonasByID(Cedula) {
             var typeOfMessage = data.trim().substring(0, 2);
             if (typeOfMessage === "M~") { //si todo esta corecto
                 swal("Confirmacion", responseText, "success");
-                clearFormPersonas();
-                $("#dt_personas").DataTable().ajax.reload();
+                clearFormUsers();
+                $("#dt_Users").DataTable().ajax.reload();
             } else {//existe un error
                 swal("Error", responseText, "error");
             }
@@ -204,9 +204,9 @@ function cargarTablas() {
 
 
 
-    var dataTablePersonas_const = function () {
-        if ($("#dt_personas").length) {
-            $("#dt_personas").DataTable({
+    var dataTableUsers_const = function () {
+        if ($("#dt_Users").length) {
+            $("#dt_Users").DataTable({
                 dom: "Bfrtip",
                 bFilter: true,
                 ordering: true,
@@ -233,8 +233,8 @@ function cargarTablas() {
                         targets: 6,
                         className: "dt-center",
                         render: function (data, type, row, meta) {
-                            var botones = '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="showPersonasByID(\''+row[0]+'\');">Cargar</button> ';
-                            botones += '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="deletePersonasByID(\''+row[0]+'\');">Eliminar</button>';
+                            var botones = '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="showUsersByID(\''+row[0]+'\');">Cargar</button> ';
+                            botones += '<button type="button" class="btn btn-default btn-xs" aria-label="Left Align" onclick="deleteUsersByID(\''+row[0]+'\');">Eliminar</button>';
                             return botones;
                         }
                     }
@@ -243,16 +243,16 @@ function cargarTablas() {
                 pageLength: 5,
                 language: dt_lenguaje_espanol,
                 ajax: {
-                    url: 'Backend/controller/personasController.php',
+                    url: '../../../backend/controller/usersController.php',
                     type: "POST",
                     data: function (d) {
                         return $.extend({}, d, {
-                            action: "showAll_personas"
+                            action: "showAll_Users"
                         });
                     }
                 },
                 drawCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-                    $('#dt_personas').DataTable().columns.adjust().responsive.recalc();
+                    $('#dt_Users').DataTable().columns.adjust().responsive.recalc();
                 }
             });
         }
@@ -264,7 +264,7 @@ function cargarTablas() {
         "use strict";
         return {
             init: function () {
-                dataTablePersonas_const();
+                dataTableUsers_const();
                 $(".dataTables_filter input").addClass("form-control input-rounded ml-sm");
             }
         };
@@ -278,5 +278,5 @@ function cargarTablas() {
 //*******************************************************************************
 
 window.onresize = function () {
-    $('#dt_personas').DataTable().columns.adjust().responsive.recalc();
+    $('#dt_Users').DataTable().columns.adjust().responsive.recalc();
 };

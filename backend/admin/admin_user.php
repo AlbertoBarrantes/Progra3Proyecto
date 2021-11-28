@@ -3,7 +3,10 @@ $page_title = 'Usuarios';
 require_once('admin_header.php');
 
 ?>
-
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlJDp1mNCpUj8Yn2L-wfuNysxxZ_pmeKA&callback=initMap&v=weekly"
+    async></script>
+</head>
     <body>
 
         <!-- ********************************************************** -->
@@ -35,42 +38,42 @@ require_once('admin_header.php');
             
             <div class="row">
                 <div class="col-md-12">
-                    <form role="form" onsubmit="return false;" id="formPersonas" action="../backend/controller/personasController.php">
+                    <form role="form" onsubmit="return false;" id="formUsers" action="../controller/usersController.php">
                         <div class="row">
                             <!-- ******************************************************** -->
                             <!-- Campos de formulario      -->
                             <!-- ******************************************************** -->
                             <div class="col-md-12">
 
-                                <div class="form-group" id="groupPK_cedula">
-                                    <label for="txtPK_cedula">Nombre de usuario</label>
-                                    <input type="text" class="form-control" id="txtPK_cedula"  placeholder="Nombre de usuario">
+                                <div class="form-group" id="groupusername">
+                                    <label for="txtusername">Nombre de usuario</label>
+                                    <input type="text" class="form-control" id="txtusername"  placeholder="Nombre de usuario">
                                 </div>
-                                <div class="form-group" id="groupnombre">
-                                    <label for="txtnombre">Nombre</label>
-                                    <input type="text" class="form-control" id="txtnombre"  placeholder="Nombre">
+                                <div class="form-group" id="groupname">
+                                    <label for="txtname">Nombre</label>
+                                    <input type="text" class="form-control" id="txtname"  placeholder="Nombre">
                                 </div>
-                                <div class="form-group" id="groupapellido1">
-                                    <label for="txtapellido1">Primer Apellido</label>
-                                    <input type="text" class="form-control" id="txtapellido1"  placeholder="Primer Apellido">
+                                <div class="form-group" id="grouplast_name1">
+                                    <label for="txtlast_name1">Primer Apellido</label>
+                                    <input type="text" class="form-control" id="txtlast_name1"  placeholder="Primer Apellido">
                                 </div>
-                                <div class="form-group" id="groupapellido2">
-                                    <label for="txtapellido2">Segundo Apellido</label>
-                                    <input type="text" class="form-control" id="txtapellido2"  placeholder="Segundo Apellido">
+                                <div class="form-group" id="grouplast_name2">
+                                    <label for="txtlast_name2">Segundo Apellido</label>
+                                    <input type="text" class="form-control" id="txtlast_name2"  placeholder="Segundo Apellido">
                                 </div>
-                                <div class="form-group" id="groupfecNacimiento">
-                                    <label for="txtfecNacimiento">Fecha Nacimiento</label>
-                                    <input type="text" class="form-control" id="txtfecNacimiento"  placeholder="Fec. Nacimiento">
+                                <div class="form-group" id="groupbirth_date">
+                                    <label for="txtbirth_date">Fecha Nacimiento</label>
+                                    <input type="text" class="form-control" id="txtbirth_date"  placeholder="Fec. Nacimiento">
                                 </div>
-                                <div class="form-group" id="groupsexo">
-                                    <label for="txtsexo">Correo electronico</label>
-                                    <input type="text" class="form-control" id="txtsexo"  placeholder="Correo electronico">
+                                <div class="form-group" id="groupemail">
+                                    <label for="txtemail">Correo electronico</label>
+                                    <input type="text" class="form-control" id="txtemail"  placeholder="Correo electronico">
                                 </div>
-                                <div class="form-group" id="groupobservaciones">
-                                    <label for="txtobservaciones">Telefono de trabajo</label>
-                                    <input type="text" class="form-control" id="txtobservaciones"  placeholder="Telefono de trabajo">
+                                <div class="form-group" id="groupaddress">
+                                    <label for="txtaddress">Telefono de trabajo</label>
+                                    <input type="text" class="form-control" id="txtaddress"  placeholder="Telefono de trabajo">
                                 </div>
-                                <div class="form-group" id="groupobservaciones">
+                                <div class="form-group" id="groupwork_phone">
                                     <label for="txtobservaciones">Telefono celular</label>
                                     <input type="text" class="form-control" id="txtobservaciones"  placeholder="Telefono celular">
                                 </div>

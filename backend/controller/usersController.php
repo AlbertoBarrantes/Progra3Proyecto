@@ -5,7 +5,7 @@ require_once("../domain/users.php");
 
 
 //************************************************************
-// Personas Controller 
+// Users Controller 
 //************************************************************
 
 //echo("<hr>Datos Recibidos: <br>");

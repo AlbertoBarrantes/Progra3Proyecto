@@ -46,8 +46,8 @@
     
     <!-- Script propios de la pagina -->
     <script src="../../assets/js/datatables/utils.js" type="text/javascript"></script>
-    <script type="text/javascript" src="../../js/datatables/personasFunctions.js"></script>
+    <script type="text/javascript" src="../../js/datatables/usersFunctions.js"></script>
    
     
-</head>
+
 
