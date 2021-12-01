@@ -1,100 +1,44 @@
-<!DOCTYPE html>
-<html>
+<?php
+$page_title = 'Ingreso';
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Easy Travel</title>
-  <link rel="icon" type="image/x-icon" href="assets/img/icons/png/36x36.png">
-  <meta name="description" content="Agencia de Viajes">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+session_start();
 
-  <!-- CSS -->
-  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
-
-  <!-- Icons-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
-  <!-- JavaScript -->
-  <script src="assets/js/bootstrap.js"></script>
-  <script src="assets/js/custom.js"></script>
+require_once('backend/public/public_header.php');
+require_once('backend/public/navbar.php');
 
 
-  <!-- Sweet Alert -->
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+error_reporting(0); 
+?>
 
-</head>
+
+
+
+
+
+</html>
+
 
 <body>
-
-
-
-
-
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-2">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#!"><img src="assets/img/icons/nav/nav.png"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <form class="d-flex px-5">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
-
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/signup.html">Registrarse</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/login.html">Acceder a mi
-                cuenta</a>
-            </li>
-          </ul>
-
-        </div>
-      </div>
-    </nav>
-  </header>
-  <!-- NAVBAR -->
-
 
   <br><br>
 
 
-
-
-
-
-
-
-
-
   <!-- SIGN IN -->
   <div class="my-5 signup-form2 shadow text-center" style="max-width:350px !important;">
-    <form action="startSession.php" method="post">
+    <form action="backend/controller/loginValidation_startSession.php" method="post">
       <h2>Ingreso</h2>
       <p>Por favor llene los datos para ingresar</p>
       <hr>
 
       <div class="rowX">
-        
+
         <div class="colX">
-          
+
           <!-- usuario -->
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-              <input id="username" name="username" type="text" class="form-control" placeholder="Usuario"
-                required="required">
+              <input id="username" name="username" type="text" class="form-control" placeholder="Usuario" required="required">
             </div>
           </div>
 
@@ -102,21 +46,20 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña"
-                required="required">
+              <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña" required="required">
             </div>
           </div>
 
           <!-- 'action' POST -->
           <input id="action" name="action" value="add_users" style="visibility: hidden;"></input>
-          
+
           <!-- botón registrarse -->
           <div class="form-group col-6 mx-auto">
             <button type="submit" class="btn btn-primary btn-lg">Ingresar</button>
           </div>
 
         </div>
-      
+
       </div>
 
     </form>
@@ -137,8 +80,6 @@
 
 
 
-
-
   <!-- FOOTER-->
   <footer class="bg-dark text-center text-white mt-5">
     <!-- Grid container -->
@@ -147,16 +88,13 @@
 
       <section class="mb-4">
         <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" target="_blank"
-          role="button"><i class="bi bi-facebook"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" target="_blank" role="button"><i class="bi bi-facebook"></i></a>
 
         <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Twitter.com" target="_blank"
-          role="button"><i class="bi bi-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Twitter.com" target="_blank" role="button"><i class="bi bi-twitter"></i></a>
 
         <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Instagram.com" target="_blank"
-          role="button"><i class="bi bi-instagram"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Instagram.com" target="_blank" role="button"><i class="bi bi-instagram"></i></a>
 
       </section>
       <!-- Section: Social media -->

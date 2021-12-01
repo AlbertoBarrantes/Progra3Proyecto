@@ -20,17 +20,19 @@
     
     <!-- Page scripts -->
     <!-- Datatables -->
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables/media/js/jquery.dataTables_1.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables/media/js/jquery.dataTables_1.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables/media/js/jquery.dataTables_1.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons/js/dataTables.buttons.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons-bs/js/buttons.bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons/js/buttons.flash.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons/js/buttons.html5.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-buttons/js/buttons.print.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-keytable/js/dataTables.keyTable.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-responsive/js/dataTables.responsive.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/datatables/lib/dataTableFull/datatables.net-responsive-bs/js/responsive.bootstrap.js" type="text/javascript"></script>
     
     
     <link href="../../assets/js/datatables/lib/dataTableFull/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -46,7 +48,7 @@
     
     <!-- Script propios de la pagina -->
     <script src="../../assets/js/datatables/utils.js" type="text/javascript"></script>
-    <script type="text/javascript" src="../../js/datatables/usersFunctions.js"></script>
+    <script  src="../../js/datatables/usersFunctions.js" type="text/javascript"></script>
    
     
 

@@ -8,18 +8,19 @@ function enableInput() {
     document.getElementById("divBtnSave").className = "collapse.show";
     document.getElementById("divBtnExit").className = "collapse.show";
   
-    document.getElementById("user").disabled = false;
-    document.getElementById("name").disabled = false;
-    document.getElementById("pa").disabled = false;
-    document.getElementById("sa").disabled = false;
-    document.getElementById("date").disabled = false;
-    document.getElementById("email").disabled = false;
-    document.getElementById("password1").disabled = false;
-    
-    document.getElementById("phoneWork").disabled = false;
-    document.getElementById("phonePersonal").disabled = false;
-    document.getElementById("address").disabled = false;
+    //document.getElementById("username").readOnly = false;
+    document.getElementById("name").readOnly = false;
+    document.getElementById("last_name1").readOnly = false;
+    document.getElementById("last_name2").readOnly = false;
+    document.getElementById("birth_date").readOnly = false;
+    document.getElementById("email").readOnly = false;
+    document.getElementById("work_phone").readOnly = false;
+    document.getElementById("personal_phone").readOnly = false;
+    document.getElementById("password").readOnly = false;
+    document.getElementById("address").readOnly = false;
+
     document.getElementById("divX").style.pointerEvents = "all";
+    console.log("enableInput() ok");
   }
   
   function disableInput() {
@@ -28,23 +29,24 @@ function enableInput() {
     document.getElementById("divBtnSave").className = "collapse";
     document.getElementById("divBtnExit").className = "collapse";
   
-    document.getElementById("user").disabled = true;
-    document.getElementById("name").disabled = true;
-    document.getElementById("pa").disabled = true;
-    document.getElementById("sa").disabled = true;
-    document.getElementById("date").disabled = true;
-    document.getElementById("email").disabled = true;
-    document.getElementById("password1").disabled = true;
-  
-    document.getElementById("phoneWork").disabled = true;
-    document.getElementById("phonePersonal").disabled = true;
-    document.getElementById("address").disabled = true;
+    document.getElementById("username").readOnly = true;
+    document.getElementById("name").readOnly = true;
+    document.getElementById("last_name1").readOnly = true;
+    document.getElementById("last_name2").readOnly = true;
+    document.getElementById("birth_date").readOnly = true;
+    document.getElementById("email").readOnly = true;
+    document.getElementById("work_phone").readOnly = true;
+    document.getElementById("personal_phone").readOnly = true;
+    document.getElementById("password").readOnly = true;
+    document.getElementById("address").readOnly = true;
+
     document.getElementById("divX").style.pointerEvents = "none";
-    
+    console.log("disableInput() ok");
   }
   
   function discardModification() {
     window.location.reload(true);
+    console.log("discardModification() ok");
     return false;
   }
 

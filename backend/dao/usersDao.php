@@ -116,6 +116,9 @@ class UsersDao {
                                             email = %s, 
                                             birth_date = %s, 
                                             password = %s, 
+                                            address = %s, 
+                                            work_phone = %s,
+                                            personal_phone = %s,
                                             lastuser = %s, 
                                             LASTMODIFICATION = CURDATE() 
                             where username = %s",
@@ -126,6 +129,9 @@ class UsersDao {
                     $this->labAdodb->Param("email"),
                     $this->labAdodb->Param("birth_date"),
                     $this->labAdodb->Param("password"),
+                    $this->labAdodb->Param("address"),
+                    $this->labAdodb->Param("work_phone"),
+                    $this->labAdodb->Param("personal_phone"),
                     $this->labAdodb->Param("lastuser"),
                     $this->labAdodb->Param("LASTMODIFICATION"));
             $sqlParam = $this->labAdodb->Prepare($sql);
@@ -138,6 +144,9 @@ class UsersDao {
             $valores["email"]            = $users->getemail();
             $valores["birth_date"]       = $users->getbirth_date();
             $valores["password"]         = $users->getpassword();
+            $valores["address"]          = $users->getaddress();
+            $valores["work_phone"]       = $users->getwork_phone();
+            $valores["personal_phone"]   = $users->getpersonal_phone();
             $valores["lastuser"]         = $users->getlastuser();
             $valores["username"]         = $users->getusername();
             $this->labAdodb->Execute($sqlParam, $valores) or die($this->labAdodb->ErrorMsg());

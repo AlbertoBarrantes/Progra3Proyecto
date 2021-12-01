@@ -1,49 +1,16 @@
 <?php 
 $page_title = 'Registro'; 
 require_once('backend/public/public_header.php');
+require_once('backend/public/navbar.php');
 
 ?>
+
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlJDp1mNCpUj8Yn2L-wfuNysxxZ_pmeKA&callback=initMap&v=weekly"
     async></script>
 
-</head>
-
+<html>
 <body>
-
-
-
-
-
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-2">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../Progra3Proyecto/index.php"><img src="assets/img/icons/nav/nav.png"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <form class="d-flex px-5">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
-
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/login.php">Ingresar</a>
-            </li>
-          </ul>
-
-        </div>
-      </div>
-    </nav>
-  </header>
-  <!-- NAVBAR -->
-
 
 
 

@@ -1,55 +1,29 @@
 <?php 
 $page_title = 'Perfil'; 
+
+session_start();
+
 require_once('backend/public/public_header.php');
+require_once('backend/public/navbar.php');
+
+//error_reporting(0); 
+
+
+if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
+    $arreglo = $_SESSION['username'];
+} else {
+    header("Location:index.php");
+}
 
 ?>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlJDp1mNCpUj8Yn2L-wfuNysxxZ_pmeKA&callback=initMap&v=weekly" async></script>
 
-</head>
+
+
+<html>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlJDp1mNCpUj8Yn2L-wfuNysxxZ_pmeKA&callback=initMap&v=weekly" async></script>
 
 <body>
-
-
-
-
-
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-2">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#!"><img src="assets/img/icons/nav/nav.png"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <form class="d-flex px-5">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
-
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/login.php">Acceder a mi cuenta</a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- NAVBAR -->
-
-
-
-
-
-
-
-
 
 
 
@@ -58,7 +32,7 @@ require_once('backend/public/public_header.php');
 
     <!-- SIGN UP -->
     <div class="my-5 signup-form2 shadow container">
-        <form>
+        <form action="backend\controller\usersController.php" method="post">
             <div class="row">
                 <h2>Mi cuenta</h2>
 
@@ -67,9 +41,8 @@ require_once('backend/public/public_header.php');
                     <div class="form-group">
                         <label for="user" class="form-label ms-4">Usuario</label>
                         <div class="input-group">
-
                             <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-                            <input id="user" disabled type="text" class="form-control" name="username"
+                            <input id="username" name="username" value="<?php echo $arreglo["username"] ?>" type="text" class="form-control" readonly
                                 required="required">
                         </div>
                     </div>
@@ -78,8 +51,7 @@ require_once('backend/public/public_header.php');
                         <label for="name" class="form-label ms-4">Nombre</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-
-                            <input disabled id="name" type="text" class="form-control" name="name" required="required">
+                            <input id="name" name="name" value="<?php echo $arreglo["name"] ?>" type="text" class="form-control" required="required" readonly>
                         </div>
                     </div>
                     <!-- primer apellido -->
@@ -87,8 +59,7 @@ require_once('backend/public/public_header.php');
                         <label for="pa" class="form-label ms-4">Primer Apellido</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-
-                            <input id="pa" disabled type="text" class="form-control" name="plastname"
+                            <input id="last_name1" name="last_name1" value="<?php echo $arreglo["last_name1"] ?>" readonly type="text" class="form-control"
                                 required="required">
                         </div>
                     </div>
@@ -97,8 +68,7 @@ require_once('backend/public/public_header.php');
                         <label for="sa" class="form-label ms-4">Segundo Apellido</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-
-                            <input id="sa" disabled type="text" class="form-control" name="slastname"
+                            <input id="last_name2" name="last_name2" value="<?php echo $arreglo["last_name2"] ?>" readonly type="text" class="form-control"
                                 required="required">
                         </div>
                     </div>
@@ -108,8 +78,7 @@ require_once('backend/public/public_header.php');
                         <label for="date" class="form-label ms-4">Fecha de Nacimiento</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-
-                            <input id="date" disabled type="date" class="form-control" id="startDate"
+                            <input id="birth_date" name="birth_date" value="<?php echo $arreglo["birth_date"] ?>" readonly type="date" class="form-control"
                                 required="required" />
                             <span id="startDateSelected"></span>
                         </div>
@@ -119,7 +88,7 @@ require_once('backend/public/public_header.php');
                         <label for="email" class="form- ms-4">Email</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                            <input id="email" disabled type="email" class="form-control" name="email"
+                            <input id="email" name="email" value="<?php echo $arreglo["email"] ?>" readonly type="email" class="form-control" 
                                 required="required">
                         </div>
                     </div>
@@ -128,7 +97,7 @@ require_once('backend/public/public_header.php');
                         <label for="phoneWork" class="form- ms-4">Teléfono de trabajo</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-phone-square-alt"> </i></span>
-                            <input id="phoneWork" disabled type="text" class="form-control" required="required">
+                            <input id="work_phone" name="work_phone" value="<?php echo $arreglo["work_phone"] ?>" readonly type="text" class="form-control" required="required">
                         </div>
                     </div>
                     <!-- teléfono celular -->
@@ -136,7 +105,7 @@ require_once('backend/public/public_header.php');
                         <label for="phonePersonal" class="form- ms-4">Teléfono personal</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-mobile-alt"> </i></span>
-                            <input id="phonePersonal" disabled type="text" class="form-control" required="required">
+                            <input id="personal_phone" name="personal_phone" value="<?php echo $arreglo["personal_phone"] ?>" readonly type="text" class="form-control" required="required">
                         </div>
                     </div>
                     <!-- contraseña -->
@@ -144,8 +113,8 @@ require_once('backend/public/public_header.php');
                         <label for="password1" class="form-label ms-4">Contraseña</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input id="password1" disabled type="text" class="form-control"
-                                required="required">
+                            <input id="password" name="password"" readonly type="text" class="form-control"
+                                required="required" placeholder="••••••••••••">
                         </div>
                     </div>
                 </div>
@@ -155,7 +124,7 @@ require_once('backend/public/public_header.php');
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-marked-alt"> </i></span>
-                            <input id="address" disabled type="text" class="form-control" required="required">
+                            <input id="address" name="address"  value="<?php echo $arreglo["address"] ?>" readonly type="text" class="form-control" required="required">
                         </div>
                     </div>
                     <!-- mapa -->
@@ -167,6 +136,8 @@ require_once('backend/public/public_header.php');
                 </div>
             </div>
 
+            <!-- 'action' POST -->
+            <input id="action" name="action" value="update_users" style="visibility: hidden;"></input>
 
             <!-- Botones-->
             <div>
@@ -176,7 +147,7 @@ require_once('backend/public/public_header.php');
                             class="btn btn-primary btn-lg">Modificar datos</button>
                     </div>
                     <div id="divBtnSave" class="form-group col collapse">
-                        <button id="btnSave" onClick="disableInput()" type="button"
+                        <button id="btnSave"  type="submit"
                             class="btn btn-primary btn-lg">Guardar cambios</button>
                     </div>
                     <div id="divBtnExit" class="form-group col collapse">
@@ -190,7 +161,7 @@ require_once('backend/public/public_header.php');
     <!-- SIGN UP -->
 
 
-
+    
 
 
     <br><br>
