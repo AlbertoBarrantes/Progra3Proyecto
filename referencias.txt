@@ -7,3 +7,10 @@ REFERENCIAS:
 - date picker: https://www.codeply.com/p/zU0EWDmIfn
 
 - booking form: https://bbbootstrap.com/snippets/bootstrap-5-simple-flight-booking-form-45066312
+
+- combo box: https://www.educba.com/combobox-in-html/
+
+- select: https://www.youtube.com/watch?v=zQxV_jvHfZE           https://github.com/JrGregorioHPV/JSON--Seleccionar-Provincia-Distritos-Ciudades
+
+- asientos: https://codepen.io/priteshchandra/pen/voZdgq
+

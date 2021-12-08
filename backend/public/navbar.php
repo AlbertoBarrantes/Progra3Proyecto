@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div style="min-height:50px; min-width:25px;">
           </div>
-          <form class="d-flex ps-2 my-3 mt-1" style="min-width:200px;">
+          <form class="d-flex ps-2 my-auto" style="min-width:200px;">
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
@@ -25,7 +25,7 @@
                   <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/signup.php">Registrarse</a>
                 </div>
                 <div class="nav-item my-auto">
-                  <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/signin.php">Ingresar</a>
+                  <a class="nav-link active" aria-current="page" href="../Progra3Proyecto/signin.php">Acceder a mi cuenta</a>
                 </div>
               ';
             // Si hay sesión

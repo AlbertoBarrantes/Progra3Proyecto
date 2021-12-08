@@ -10,10 +10,11 @@ require_once('backend/public/navbar.php');
 
 ?>
 
+
 <html>
 
-<body>
 
+<body>
 
 
 
@@ -67,30 +68,143 @@ require_once('backend/public/navbar.php');
 
 
 
-
-
   <!-- BUSCADOR DE VUELOS -->
-  <div class="wrapper">
-    <form action="#">
+  <div class="wrapper container">
+    <form name="formVuelos" action="#">
+
+
 
       <!-- Radio Buttons -->
       <div class="form-group d-flex align-items-center justify-content-start flex-wrap">
         <label class="option my-sm-0 my-2 pe-3">
-          <input type="radio" id="radio1" name="radio" checked onclick="Check1()">Ida y Vuelta<span class="checkmark"></span> </label>
+          <input value="0" type="radio" id="radio1" name="radio" checked onclick="Check1()">Ida y Vuelta<span class="checkmark"></span> </label>
         <label class="option my-sm-0 my-2">
-          <input type="radio" id="radio2" name="radio" onclick="Check1()">Solo ida <span class="checkmark"></span>
+          <input value="1" type="radio" id="radio2" name="radio" onclick="Check1()">Solo ida <span class="checkmark"></span>
         </label>
       </div>
-      <!-- Origen -->
-      <div class="form-group d-sm-flex margin">
-        <div class="d-flex align-items-center flex-fill me-sm-1 my-sm-0 my-4 position-relative"> <input type="text" required placeholder="Origen" class="form-control">
-          <div class="label" id="from"></div>
+      <!-- Radio Buttons -->
+
+
+      <!-- Origen Destino  -->
+      <div class="form-group d-sm-flex margin ">
+
+
+        <!-- Origen -->
+        <div class="col d-flex align-items-center flex-fillXX me-sm-1 my-sm-0 my-4 position-relative">
+          <select id="Origen" required placeholder="Origen" class="form-control" onchange="">
+
+          </select>
         </div>
-        <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 position-relative"> <input type="text" required placeholder="Destino" class="form-control">
-          <div class="label" id="to"></div>
+        <!-- Origen -->
+
+
+
+        <!-- Destino -->
+        <div class="col d-flex align-items-center flex-fillXX ms-sm-1 my-sm-0 my-4 position-relative">
+          <select id="Destino" required placeholder="Origen" class="form-control" onChange="">
+            <!-- <option>País de destino</option> -->
+
+
+            <!-- temporal -->
+            <script>
+              $('#Origen').change(function() {
+                //var sel = document.getElementById('Origen');
+                //var opt = sel.options[sel.selectedIndex];
+                //alert(opt.text);
+              });
+            </script>
+            <!-- temporal -->
+
+
+          </select>
         </div>
+        <!-- Destino -->
+
+
+
+        <script>
+          $(document).ready(function() {
+
+            mostrar_Origen();
+            mostrar_Destino(1);
+
+            $('#Origen').change(function() {
+              $('#Destino').empty()
+                .attr('disabled', false)
+              selectDestino();
+            });
+
+          });
+
+
+
+
+          function selectDestino() {
+            //var dist = $('#Origen');
+            var dist = $('#Origen').val();
+            //console.log("ID de origen: " + dist );
+            //var Resultado = mostrar_Destino(dist.val());
+            var Resultado = mostrar_Destino(dist);
+
+            if (Resultado.lenght > 0) {
+              console.log(Resultado);
+              $('#Destino').html(Resultado);
+            }
+          }
+
+
+
+          function mostrar_Origen(data) {
+            var Resultados = '';
+
+            $.get('backend/controller/CB_PaisOrigen.php', function(data) {
+
+              $(data).each(function(row) {
+                var id_origen = data[row].city_id;
+                var origen = data[row].city_name;
+
+                Resultados = '<option value="' + id_origen + '">' + origen + '</option>';
+                console.log("ID: " + id_origen + ",     País: " + origen);
+
+                $('#Origen').append(Resultados);
+              });
+            }, 'json');
+          }
+
+
+
+          function mostrar_Destino(data_destino) {
+            var Resultado = '';
+
+
+            $.get('backend/controller/CB_PaisDestino.php', function(data) {
+
+
+              $(data).each(function(row) {
+                var id_destino = data[row].city_d_id;
+                var id_origen = data[row].city_o_id;
+                var destino = data[row].city_name;
+
+                if (data_destino == id_origen) {
+                  Resultado = '<option value="' + id_destino + '">' + destino + '</option>';
+
+                  $('#Destino').append(Resultado);
+                }
+              });
+            }, 'json');
+            return Resultado;
+          }
+        </script>
+
+
       </div>
-      <!-- Destino -->
+      <!-- Origen Destino  -->
+
+
+
+
+
+      <!-- Fechas  -->
       <div class="form-group d-sm-flex margin">
         <!-- Fecha salida -->
         <div class="col-sm-12 d-flex align-items-center flex-fill me-sm1X my-sm-0 position-relative">
@@ -103,17 +217,55 @@ require_once('backend/public/navbar.php');
           <div class="label" id="return"></div>
         </div>
       </div>
+      <!-- Fechas  -->
+
+
+
+
+
       <!-- Pasajeros -->
       <div class="form-group d-flex align-items-center position-relative col-6">
         <input id="psngr" type="number" min="1" max="10" required placeholder="Pasajeros" class="form-control">
       </div>
-      <!-- Boton buscar -->
+
+
+
+
+
+      <!-- Boton buscar vuelos -->
       <div class="form-group my-3">
-        <div class="btn btn-primary rounded-0 d-flex justify-content-center text-center p-3">Buscar Vuelos </div>
+
+        <button type="submit" class="btn btn-primary rounded-0 d-flex justify-content-center text-center p-3 mx-auto" onclick="
+
+                var rSelected = document.forms.formVuelos.elements.radio.value;
+
+                alert(  'Valor radio: ' + rSelected
+                      + '\n-------------------------' 
+                      + '\nid origen: ' + document.getElementById('Origen').value 
+                      + '\nid destino: ' + document.getElementById('Destino').value
+                      + '\n-------------------------'
+                      + '\nFecha de Salida:  ' + document.getElementById('departDate').value
+                      + '\nFecha de Regreso:  ' + document.getElementById('returnDate').value
+                      + '\n-------------------------'
+                      + '\nPasajeros: ' + document.getElementById('psngr').value
+
+                      );
+        
+                ">Reservar Vuelo
       </div>
+      <!-- Boton buscar vuelos-->
+
+
+
+
+
     </form>
   </div>
   <!-- BUSCADOR DE VUELOS -->
+
+
+
+
 
 
 

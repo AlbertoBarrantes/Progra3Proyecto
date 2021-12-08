@@ -185,6 +185,182 @@ function Check1() {
 
 
 
+  function fun1() {
+
+
+
+      // notice the quotes around the ?php tag         
+      var htmlString= '<?php $htmlString= "testing"; echo $htmlString; ?>';
+      alert(htmlString);
+
+  }
+
+
+
+
+
+
+
+
+
+  function modDestino(selectedData) {
+
+    console.log("-_-! modDestino()");
+
+
+
+    var serviceEndpoint = '../../backend\controller\fillDataController.php'
+    $.ajax({
+      type: 'POST', 
+      url: serviceEndpoint,
+      dataType: 'json',
+      contentType: 'json',
+      headers: { 'api-key':'myKey' },
+      success: function(data){
+        $('state').html(data);
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+/*
+              
+    $('#state').html('');
+    $.ajax({
+      type: 'post',
+      url: '../../backend\controller\fillDataController.php',
+      data: { postData: selectedData},
+      success: function(data){
+        $('state').html(data);
+      }
+
+
+
+    });
+
+*/
+
+
+
+/*
+    var csrftoken = $.cookie('csrftoken');
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+
+
+    $.ajax(save_url, {
+      type : 'POST',
+      contentType : 'application/json',
+      data : JSON.stringify(canvas),
+      success: function () {
+          alert("Saved!");
+      }
+  
+  })
+
+    
+  $.ajax({
+    type: 'POST',
+    url: '../../backend\controller\fillDataController.php',
+    headers: {//<==
+      "X-CSRFTOKEN": "{{ csrf_token }}"//<==
+    },
+    data: {
+      'test': 'test', 
+      'name': 0, 
+      'asdf': 'asdf'},
+    success: function(){
+      console.log('Hola funciona x2');  
+    }
+  });      
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  }
+
+
+
+
 
 /* ==================================================*/
 /* =================    SIGNUP    ====================*/
