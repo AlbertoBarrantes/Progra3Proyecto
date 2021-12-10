@@ -1,11 +1,182 @@
 
 
-
+SELECT * FROM mydb.user;
+SELECT * FROM mydb.admin;
 SELECT * FROM mydb.city_o;
 SELECT * FROM mydb.city_d;
 SELECT * FROM mydb.route;
 
-ALTER TABLE `mydb`.`city_d` AUTO_INCREMENT = 1;
+-- ALTER TABLE `mydb`.`city_d` AUTO_INCREMENT = 1;
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- USER
+
+
+
+
+INSERT INTO `mydb`.`user`
+(`id`,
+`username`,
+`name`,
+`last_name1`,
+`last_name2`,
+`email`,
+`birth_date`,
+`password`,
+`user_profile_picture`,
+`address`,
+`work_phone`,
+`personal_phone`,
+`lastUser`,
+`lastModification`)
+VALUES
+(null,
+"stepR",
+"stephanie",
+"Rodriguez",
+"Rodriguez",
+"str@gmail.com",
+"2000-04-08",
+"123",
+null,
+"Tacares, Alajuela, Costa Rica",
+"8967-8567",
+"7458-9867",
+null,
+now()),
+
+
+(<{id: }>,
+<{username: }>,
+<{name: }>,
+<{last_name1: }>,
+<{last_name2: }>,
+<{email: }>,
+<{birth_date: }>,
+<{password: }>,
+<{user_profile_picture: }>,
+<{address: }>,
+<{work_phone: }>,
+<{personal_phone: }>,
+<{lastUser: }>,
+<{lastModification: }>),
+
+
+(<{id: }>,
+<{username: }>,
+<{name: }>,
+<{last_name1: }>,
+<{last_name2: }>,
+<{email: }>,
+<{birth_date: }>,
+<{password: }>,
+<{user_profile_picture: }>,
+<{address: }>,
+<{work_phone: }>,
+<{personal_phone: }>,
+<{lastUser: }>,
+<{lastModification: }>),
+
+
+(<{id: }>,
+<{username: }>,
+<{name: }>,
+<{last_name1: }>,
+<{last_name2: }>,
+<{email: }>,
+<{birth_date: }>,
+<{password: }>,
+<{user_profile_picture: }>,
+<{address: }>,
+<{work_phone: }>,
+<{personal_phone: }>,
+<{lastUser: }>,
+<{lastModification: }>),
+
+
+(<{id: }>,
+<{username: }>,
+<{name: }>,
+<{last_name1: }>,
+<{last_name2: }>,
+<{email: }>,
+<{birth_date: }>,
+<{password: }>,
+<{user_profile_picture: }>,
+<{address: }>,
+<{work_phone: }>,
+<{personal_phone: }>,
+<{lastUser: }>,
+<{lastModification: }>);
+
+
+
+
+
+
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- ADMIN
+
+
+UPDATE `mydb`.`admin`
+SET
+`id` = 1,
+`login` = "adm.abarranp",
+`email` = "adm.abarranp@easytravel.com",
+`lastModification` = now()
+WHERE `id` = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO `mydb`.`admin`
+(`id`,
+`login`,
+`name`,
+`last_name1`,
+`last_name2`,
+`password`,
+`email`,
+`work_phone`,
+`personal_phone`,
+`admin_profile_picture`,
+`lastUser`,
+`lastModification`)
+VALUES
+(null,
+"Adm.abarranp",
+"Alberto",
+"Barrantes",
+"Paniagua",
+123,
+"adm.abarranp",
+"+506 7896-5478",
+"7458-6895",
+null,
+null,
+now());
+
+
+
+
+
+
 
 
 
@@ -112,7 +283,6 @@ SELECT  mydb.route.route_name
 FROM mydb.route
 JOIN mydb.city_o ON mydb.city_o.city_id = mydb.route.city_o_id
 JOIN mydb.country_o ON mydb.country_o.country_id = mydb.city_o.city_id;
-WHERE 
 
 
 

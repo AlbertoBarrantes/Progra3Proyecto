@@ -5,8 +5,8 @@
 $(function () { //para la creación de los controles
     //agrega los eventos las capas necesarias
     $("#enviar").click(function () {
-        alert("función: addOrUpdatePersonas()" 
-            + "\n action: " + $("#typeAction").val());
+        //alert("función: addOrUpdatePersonas()" 
+        //    + "\n action: " + $("#typeAction").val());
         addOrUpdatePersonas();
     });
     //agrega los eventos las capas necesarias
