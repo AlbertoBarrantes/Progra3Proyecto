@@ -5,6 +5,8 @@
 $(function () { //para la creación de los controles
     //agrega los eventos las capas necesarias
     $("#enviar").click(function () {
+        alert("función: addOrUpdatePersonas()" 
+            + "\n action: " + $("#typeAction").val());
         addOrUpdatePersonas();
     });
     //agrega los eventos las capas necesarias
@@ -12,12 +14,12 @@ $(function () { //para la creación de los controles
         cancelAction();
     });    //agrega los eventos las capas necesarias
 
-    $("#btMostarForm").click(function () {
-         //muestra el fomurlaior
-         clearFormPersonas();
-         $("#typeAction").val("add_personas");
-         $("#myModalFormulario").modal();
-     });
+    // $("#btMostarForm").click(function () {
+    //      //muestra el fomurlaior
+    //      clearFormPersonas();
+    //      $("#typeAction").val("add_personas");
+    //      $("#myModalFormulario").modal();
+    //  });
 
 
 
@@ -77,6 +79,7 @@ function addOrUpdatePersonas() {
     }else{
         swal("Error de validación", "Los datos del formulario no fueron digitados, por favor verificar", "error");
     }
+    $("#typeAction").val("add_users");
 }
 
 //*****************************************************************
@@ -147,7 +150,7 @@ function clearFormPersonas() {
 function cancelAction() {
     //clean all fields of the form
     clearFormPersonas();
-    //$("#typeAction").val("add_personas");
+    
     //$("#myModalFormulario").modal("hide");
 }
 

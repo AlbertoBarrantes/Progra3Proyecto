@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+<?php
+
+
+session_start();
+
+error_reporting(0);
+if (!($_SESSION['admin'] == null || $_SESSION['admin'] == "")) {
+    //$arreglo = $_SESSION['admin'];
+} else {
+    header("Location:admin_signin.php");
+}
+
+
+$page_title = 'Perfil';
+
+
+?>
+
+
+
 <html>
 
 <head>
@@ -69,13 +88,20 @@
 
 
     <!-- Mapa -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlJDp1mNCpUj8Yn2L-wfuNysxxZ_pmeKA&callback=initMap&v=weekly" async></script>
-
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlJDp1mNCpUj8Yn2L-wfuNysxxZ_pmeKA&callback=initMap&v=weekly" async></script>
+-->
 
 
 </head>
 
 <body>
+
+
+    <?php
+
+    include_once('admin_navbar.php');
+
+    ?>
 
 
 
@@ -101,7 +127,7 @@
                                 <label for="user" class="form-label ms-4">Usuario</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-                                    <input id="username" name="username" readOnly value="" type="text" class="form-control" required="required">
+                                    <input id="username" name="username" value="" type="text" class="form-control" required="required">
                                 </div>
                             </div>
 

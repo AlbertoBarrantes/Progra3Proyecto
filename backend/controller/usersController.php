@@ -66,7 +66,7 @@ if (filter_input(INPUT_POST, 'action') != null) {
                     $myUsersBo->update($myUsers);
 
                     // actualiza los datos de la sesión
-                    if (!($_SESSION['username'] == null || $_SESSION['username'] == "")) {
+                    if (!($_SESSION['username'] == null || $_SESSION['username'] == "") || (!($_SESSION['admin'] == null || $_SESSION['admin'] == "")) ) {
                         $arreglo = $_SESSION['username'];
                         $arreglo['name'] = $myUsers->getname();
                         $arreglo['last_name1'] = $myUsers->getlast_name1();

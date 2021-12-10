@@ -15,6 +15,8 @@ class Conexion extends mysqli{
         // Codificación de carácteres
         $this->set_charset('utf8');
 
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
         // Comprobar conexión
         $this->connect_errno ? die('Error de Conexión'. mysqli_connect_errno()) : 
         $EstadoConexion = 'Conectado a la Base de Datos';

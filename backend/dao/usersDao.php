@@ -42,7 +42,7 @@ class UsersDao {
                                                    address,
                                                    work_phone,
                                                    personal_phone,
-                                                   lastuser, 
+                                                   LASTUSER, 
                                                    lastmodification) 
                                           values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NOW())",
                     $this->labAdodb->Param("username"),
@@ -55,6 +55,7 @@ class UsersDao {
                     $this->labAdodb->Param("address"),
                     $this->labAdodb->Param("work_phone"),
                     $this->labAdodb->Param("personal_phone"),
+                    $this->labAdodb->Param("LASTUSER")
                     );
             $sqlParam = $this->labAdodb->Prepare($sql);
 
@@ -70,7 +71,7 @@ class UsersDao {
             $valores["address"]          = $users->getaddress();
             $valores["work_phone"]       = $users->getwork_phone();
             $valores["personal_phone"]   = $users->getpersonal_phone();
-            $valores["lastuser"]         = $users->getLastUser();
+            $valores["LASTUSER"]         = $users->getLastUser();
 
             $this->labAdodb->Execute($sqlParam, $valores) or die($this->labAdodb->ErrorMsg());
         } catch (Exception $e) {
