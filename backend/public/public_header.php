@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Easy Travel <?php if(isset($page_title)) { echo '- ' . $page_title; } ?> </title>
-
   <link rel="icon" type="image/x-icon" href="assets/img/icons/png/36x36.png">
   <meta name="description" content="Agencia de Viajes">
   <meta name="viewport" content="width=device-width, initial-scale=1">

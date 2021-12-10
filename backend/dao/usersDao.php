@@ -52,7 +52,6 @@ class UsersDao {
                     $this->labAdodb->Param("email"),
                     $this->labAdodb->Param("birth_date"),
                     $this->labAdodb->Param("password"),
-                    $this->labAdodb->Param("password"),
                     $this->labAdodb->Param("address"),
                     $this->labAdodb->Param("work_phone"),
                     $this->labAdodb->Param("personal_phone"),
@@ -182,7 +181,11 @@ class UsersDao {
     public function searchById(Users $users) {
         $returnUsers = null;
         try {
-            $sql = sprintf("select * from user where  username = %s",
+            $sql = sprintf("
+                            SELECT  U.id, U.username, U.name, U.last_name1, U.last_name2, U.birth_date, U.email, U.work_phone, U.personal_phone, U.password, U.address
+                            FROM mydb.user U
+                            WHERE  username = %s
+                            ",
                             $this->labAdodb->Param("username"));
             $sqlParam = $this->labAdodb->Prepare($sql);
 
@@ -196,9 +199,13 @@ class UsersDao {
                 $returnUsers->setname($resultSql->Fields("name"));
                 $returnUsers->setlast_name1($resultSql->Fields("last_name1"));
                 $returnUsers->setlast_name2($resultSql->Fields("last_name2"));
-                $returnUsers->setemail($resultSql->Fields("email"));
                 $returnUsers->setbirth_date($resultSql->Fields("birth_date"));
+                $returnUsers->setemail($resultSql->Fields("email"));
+                $returnUsers->setwork_phone($resultSql->Fields("work_phone"));
+                $returnUsers->setpersonal_phone($resultSql->Fields("personal_phone"));
                 $returnUsers->setpassword($resultSql->Fields("password"));
+                $returnUsers->setaddress($resultSql->Fields("address"));
+                
             }
         } catch (Exception $e) {
             throw new Exception('No se pudo consultar el registro (Error generado en el metodo searchById de la clase PersonasDao), error:'.$e->getMessage());
@@ -210,14 +217,31 @@ class UsersDao {
     //obtiene la información de las personas en la base de datos
     //***********************************************************
     
+    // public function getAll() {
+    //     try {
+    //         $sql = sprintf("select * from mydb.user");
+    //         $resultSql = $this->labAdodb->Execute($sql);
+    //         return $resultSql;
+    //     } catch (Exception $e) {
+    //         throw new Exception('No se pudo obtener los registros (Error generado en el metodo getAll de la clase PersonasDao), error:'.$e->getMessage());
+    //     }
+    // }
+
     public function getAll() {
         try {
-            $sql = sprintf("select * from mydb.user");
+            $sql = sprintf("
+
+                            SELECT  U.id,  U.username, U.name, U.last_name1, U.last_name2, U.birth_date, U.email, U.work_phone, U.personal_phone, U.password, U.address
+                            FROM mydb.user U;
+
+                            ");
             $resultSql = $this->labAdodb->Execute($sql);
             return $resultSql;
         } catch (Exception $e) {
             throw new Exception('No se pudo obtener los registros (Error generado en el metodo getAll de la clase PersonasDao), error:'.$e->getMessage());
         }
     }
+
+    
 
 }

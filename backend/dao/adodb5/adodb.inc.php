@@ -620,7 +620,8 @@ if (!defined('_ADODB_LAYER')) {
 		}
 
 		if ($newline) {
-			$msg .= "<br>\n";
+			//$msg .= "<br>\n";
+			$msg .= "";
 		}
 
 		if (isset($_SERVER['HTTP_USER_AGENT']) || !$newline) {

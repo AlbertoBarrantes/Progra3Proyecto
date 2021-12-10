@@ -1,5 +1,5 @@
-<?php 
-$page_title = 'Perfil'; 
+<?php
+$page_title = 'Perfil';
 
 session_start();
 
@@ -9,7 +9,7 @@ require_once('backend/public/navbar.php');
 //error_reporting(0); 
 
 
-if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
+if (!($_SESSION['username'] == null || $_SESSION['username'] == "")) {
     $arreglo = $_SESSION['username'];
 } else {
     header("Location:index.php");
@@ -42,8 +42,7 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
                         <label for="user" class="form-label ms-4">Usuario</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-                            <input id="username" name="username" value="<?php echo $arreglo["username"] ?>" type="text" class="form-control" readonly
-                                required="required">
+                            <input id="username" name="username" value="<?php echo $arreglo["username"] ?>" type="text" class="form-control" readonly required="required">
                         </div>
                     </div>
                     <!-- nombre -->
@@ -59,8 +58,7 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
                         <label for="pa" class="form-label ms-4">Primer Apellido</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input id="last_name1" name="last_name1" value="<?php echo $arreglo["last_name1"] ?>" readonly type="text" class="form-control"
-                                required="required">
+                            <input id="last_name1" name="last_name1" value="<?php echo $arreglo["last_name1"] ?>" readonly type="text" class="form-control" required="required">
                         </div>
                     </div>
                     <!-- segundo apellido -->
@@ -68,8 +66,7 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
                         <label for="sa" class="form-label ms-4">Segundo Apellido</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input id="last_name2" name="last_name2" value="<?php echo $arreglo["last_name2"] ?>" readonly type="text" class="form-control"
-                                required="required">
+                            <input id="last_name2" name="last_name2" value="<?php echo $arreglo["last_name2"] ?>" readonly type="text" class="form-control" required="required">
                         </div>
                     </div>
 
@@ -78,8 +75,7 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
                         <label for="date" class="form-label ms-4">Fecha de Nacimiento</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                            <input id="birth_date" name="birth_date" value="<?php echo $arreglo["birth_date"] ?>" readonly type="date" class="form-control"
-                                required="required" />
+                            <input id="birth_date" name="birth_date" value="<?php echo $arreglo["birth_date"] ?>" readonly type="date" class="form-control" required="required" />
                             <span id="startDateSelected"></span>
                         </div>
                     </div>
@@ -88,8 +84,7 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
                         <label for="email" class="form- ms-4">Email</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-                            <input id="email" name="email" value="<?php echo $arreglo["email"] ?>" readonly type="email" class="form-control" 
-                                required="required">
+                            <input id="email" name="email" value="<?php echo $arreglo["email"] ?>" readonly type="email" class="form-control" required="required">
                         </div>
                     </div>
                     <!-- teléfono de trabajo -->
@@ -113,8 +108,7 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
                         <label for="password1" class="form-label ms-4">Contraseña</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input id="password" name="password"" readonly type="text" class="form-control"
-                                required="required" placeholder="••••••••••••">
+                            <input id="password" name="password"" readonly type=" text" class="form-control" required="required" placeholder="••••••••••••">
                         </div>
                     </div>
                 </div>
@@ -124,7 +118,7 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-marked-alt"> </i></span>
-                            <input id="address" name="address"  value="<?php echo $arreglo["address"] ?>" readonly type="text" class="form-control" required="required">
+                            <input id="address" name="address" value="<?php echo $arreglo["address"] ?>" readonly type="text" class="form-control" required="required">
                         </div>
                     </div>
                     <!-- mapa -->
@@ -137,22 +131,19 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
             </div>
 
             <!-- 'action' POST -->
-            <input id="action" name="action" value="update_users" style="visibility: hidden;"></input>
+            <input id="action" type="hidden" name="action" value="update_users" style="visibility: hidden;"></input>
 
             <!-- Botones-->
             <div>
                 <div class="row row-cols-auto justify-content-center">
                     <div id="divBtnMod" class="form-group col ">
-                        <button id="btnMod" onClick="enableInput()" type="button"
-                            class="btn btn-primary btn-lg">Modificar datos</button>
+                        <button id="btnMod" onClick="enableInput()" type="button" class="btn btn-primary btn-lg">Modificar datos</button>
                     </div>
                     <div id="divBtnSave" class="form-group col collapse">
-                        <button id="btnSave"  type="submit"
-                            class="btn btn-primary btn-lg">Guardar cambios</button>
+                        <button id="btnSave" type="submit" class="btn btn-primary btn-lg">Guardar cambios</button>
                     </div>
                     <div id="divBtnExit" class="form-group col collapse">
-                        <button id="btnExit" onClick="discardModification()" type="button"
-                            class="btn btn-primary btn-lg">Salir</button>
+                        <button id="btnExit" onClick="discardModification()" type="button" class="btn btn-primary btn-lg">Salir</button>
                     </div>
                 </div>
             </div>
@@ -161,7 +152,7 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
     <!-- SIGN UP -->
 
 
-    
+
 
 
     <br><br>
@@ -169,11 +160,11 @@ if ( !($_SESSION['username'] == null || $_SESSION['username'] == "") ){
 
 
 
-<?php 
+    <?php
 
-require_once('backend/public/public_footer.php');
+    require_once('backend/public/public_footer.php');
 
-?>
+    ?>
 
 </body>
 

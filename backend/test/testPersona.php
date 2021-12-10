@@ -21,7 +21,7 @@ $obj_persona->setLastUser("abarranp");
 
 $bo_persona = new PersonasBo();
 
-$operacion = 1; //variable para pruebas
+$operacion = 5; //variable para pruebas
 
 switch ($operacion) {
     case 1: //Prueba para guardar en la base de datos

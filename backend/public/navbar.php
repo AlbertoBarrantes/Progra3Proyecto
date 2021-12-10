@@ -37,7 +37,7 @@
                 <div id="accountDIV" class="dropdown my-3">
                   <input id="btn_MiCuenta" value="Hola '.$arreglo['name'].' ▾" name="btn_MiCuenta" class="btn btn-secondary dropdown-toggle bg-dark shadow-none border-0 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="btn_MiCuenta">
-                    <li><a class="dropdown-item" href="profile.php">Ver mi perfil</a></li>
+                    <li><a class="dropdown-item" href="profile.php">Ver mi cuenta</a></li>
                     <li><a class="dropdown-item" href="backend/controller/destroySession.php">Salir</a></li>
                   </ul>
                 </div>

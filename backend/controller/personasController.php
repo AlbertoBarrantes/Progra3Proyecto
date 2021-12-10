@@ -15,10 +15,10 @@ require_once("../domain/personas.php");
 // Personas Controller 
 //************************************************************
 
-echo("<hr>Datos Recibidos: <br>");
+/*echo("<hr>Datos Recibidos: <br>");
 print_r($_POST);
 echo("<br><hr><br>");
-
+*/
 
 if (filter_input(INPUT_POST, 'action') != null) {
     $action = filter_input(INPUT_POST, 'action');
