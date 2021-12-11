@@ -14,3 +14,55 @@ REFERENCIAS:
 
 - asientos: https://codepen.io/priteshchandra/pen/voZdgq
 
+
+
+
+
+Table: airplane
+Columns:
+
+
+
+airplane_id int(11) AI PK 
+year year(4) 
+model varchar(45) 
+brand varchar(45) 
+passengers smallint(6) 
+rows smallint(6) 
+sits_row smallint(6) 
+lastModification datetime
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+action:         $("#typeAction").val(),
+                PK:             $("#airplane_id").val(),
+                model:          $("#model").val(),
+                year:           $("#year").val(),
+                brand:          $("#brand").val(),
+                passengers:     $("#pasangers").val(),
+                rows:           $("#rows").val(),
+                sits_row:       $("#sits_row").val()
+
+
+
+
+
+
+
+
+
+
+
