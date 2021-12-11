@@ -75,6 +75,8 @@ h3 {
 /* Profile
 ------------------------------------*/
 header {
+  background-image: url(../img/history/viajes1.jpg);
+  background-size: cover;
   background: #9bc5ec;
   color: #f7fff7;
 }
@@ -114,7 +116,7 @@ header {
 /* Education
 ------------------------------------*/
 .education {
-  background-image: url(../img/history/joanna-kosinska-unsplash.jpg);
+  background-image: url(../img/history/fondo1.jpg);
   background-size: cover;
   background-position: top right;
   padding-bottom: 100px;

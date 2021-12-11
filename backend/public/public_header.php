@@ -8,7 +8,7 @@
   <link rel="icon" type="image/x-icon" href="assets/img/icons/png/36x36.png">
   <meta name="description" content="Agencia de Viajes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link href="https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,600&display=swap" rel="stylesheet">
   <!-- CSS -->
   <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />

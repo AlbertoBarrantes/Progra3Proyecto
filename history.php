@@ -10,8 +10,8 @@ require_once('backend/public/navbar.php');
 
 ?>
 
-    <link href="https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/history.css">
+   
+  <link rel="stylesheet" href="assets/css/history.css">
   </head>
   <body>
     <main>
@@ -20,9 +20,22 @@ require_once('backend/public/navbar.php');
         <div class="content-wrap">
           <h1>Easy Travel</h1>
           <h2>Agencia de viajes</h2>
-
-          <p>As a developer, I specialize in creating modular and scalable front-end architectures. As an educator, I focus on creating inclusive learning environments, instructor training and curriculum development.</p>
-          <p>I’m also exploring more creative pursuits designing tee shirts and accessories for <a href="http://teethang.com" target="_blank">Nuthin’ But a Tee Thang</a>, an online store I’m running with my husband.</p>
+          <BR><BR>
+          <p>Nuestra empresa fue fundada en 2010 por Roberto Souviron mientras realizaba su MBA en Estados Unidos.
+          <p>El objetivo inicial fue evitar que los viajeros hicieran largas colas en las ventanillas de las aerolíneas para
+          conseguir un vuelo. Como muchos proyectos de Internet buscó expandirse rápidamente y en 10 meses abrió 9 oficinas
+          en
+         las principales ciudades de Latinoamérica.</p>
+          <p>Fue una de las primeras firmas en ofrecer la posibilidad los usuarios de comprar online un vuelo y reservar una
+         habitación en un hotel en Internet. Hoy es la agencia con mayor presencia en la región y líder en ventas.</p>
+         <p>Con el objetivo de consolidarse en Latinoamérica y asociar su marca al concepto de turismo, generó alianzas con
+          otros sitios de Internet para que le proveyeran tráfico y negocios.</p>
+         <p>También cerró alianzas para facilitar el acceso a viajeros a la compra anticipada de entradas, comidas y hoteles
+         de
+         los parques de Disney World Resorts y más recientemente con Universal Studios.</p>
+         <p>Para el año 2010, según la Asociación de Transporte Aéreo Internacional (IATA, por sus siglas en inglés)
+          Despegar.com era la agencia que más pasajes aéreos vendía en la Argentina. En Brasil, Decolar.com, logró el mismo
+          resultado.</p>
         </div>
       </header>
 
@@ -51,7 +64,7 @@ require_once('backend/public/navbar.php');
 
           <!-- Project 3 -->
           <section class="project-item">
-            <img src="assets/img/historyproject-wire-ipsum.jpg" alt="The Wire Ipsum website">
+            <img src="/assets/img/viajes1.jpg" alt="The Wire Ipsum website">
             <h3>The Wire Ipsum</h3>
             <p>After coming back from teaching a JavaScript workshop, I felt inspired to create something just for fun. I realized that of all the content/lorem ipsum generators available, there was nothing for HBO’s The Wire fans. I searched for <a href="http://thewireipsum.com" target="_blank">thewireipsum.com</a> domain and it was available! Generate some content for your projects today.</p>
             <a class="btn" href="http://thewireipsum.com" target="_blank">View live site</a>

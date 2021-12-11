@@ -276,28 +276,29 @@ require_once('backend/public/navbar.php');
   <!-- CARDS -->
   <div class="card-group w-75 mx-auto my-5">
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="assets/img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+      <img class="card-img-top" src="assets/img/cards/mexicocity.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-          This content is a little bit longer.</p>
+        <h5 class="card-title">Ciudad de Mexico</h5>
+        <p class="card-text">Encontra los mejores descuentos </p>
+       <p>***************</p> <p><b>Hasta un 30%</b></p><p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="assets/img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+      <img class="card-img-top" src="assets/img/cards/lasvegas.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <h5 class="card-title">Las Vegas</h5>
+        <p class="card-text">Encontra los mejores descuentos </p>
+       <p>***************</p> <p><b>Hasta un 10%</b></p><p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="assets/img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+      <img class="card-img-top" src="assets/img/cards/buenosaires.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-          This card has even longer content than the first to show that equal height action.</p>
+      <h5 class="card-title">Buenos Aires</h5>
+        <p class="card-text">Encontra los mejores descuentos </p>
+       <p>***************</p> <p><b>Hasta un 15%</b></p><p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
@@ -309,28 +310,29 @@ require_once('backend/public/navbar.php');
 
   <div class="card-group w-75 mx-auto my-5">
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="assets/img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+      <img class="card-img-top" src="assets/img/cards/tokyo.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-          This content is a little bit longer.</p>
+      <h5 class="card-title">Tokyo</h5>
+        <p class="card-text">Encontra los mejores descuentos </p>
+       <p>***************</p> <p><b>Hasta un 5%</b></p><p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="assets/img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+      <img class="card-img-top" src="assets/img/cards/machupicchu.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <h5 class="card-title">Machu Picchu</h5>
+        <p class="card-text">Encontra los mejores descuentos </p>
+       <p>***************</p> <p><b>Hasta un 5%</b></p><p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
-      <img class="card-img-top" src="assets/img/cards/card1.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
+      <img class="card-img-top" src="assets/img/cards/islascaiman.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-          This card has even longer content than the first to show that equal height action.</p>
+      <h5 class="card-title">Islas Caiman</h5>
+        <p class="card-text">Encontra los mejores descuentos </p>
+       <p>***************</p> <p><b>Hasta un 5%</b></p><p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
