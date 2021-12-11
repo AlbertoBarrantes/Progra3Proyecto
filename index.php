@@ -343,7 +343,7 @@ require_once('backend/public/navbar.php');
 
   <!-- HISTORIA -->
   <div class="w-50 mx-auto my-5">
-    <h1 class="mb-4 ">Los orígenes de una de las aerolíneas más importantes.</h1>
+    <a href="history.php"><h1 class="mb-4 ">Los orígenes de una de las aerolíneas más importantes.</h1></a>
 
     <img style="max-width: 400px;" class="rounded float-start me-4 mb-3" src="assets/img/history section/plane.png" alt="Card image cap">
     <p>Nuestra empresa fue fundada en 2010 por Roberto Souviron mientras realizaba su MBA en Estados Unidos.
