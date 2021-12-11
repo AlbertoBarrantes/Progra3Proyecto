@@ -11,7 +11,7 @@ if (!($_SESSION['admin'] == null || $_SESSION['admin'] == "")) {
 }
 
 
-$page_title = 'Perfil';
+$page_title = 'Mantenimiento de Usuarios';
 
 
 ?>
