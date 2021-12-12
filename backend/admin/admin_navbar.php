@@ -32,8 +32,9 @@
                                 <input id="btn_Mantenimientos" value="Mantenimientos ▾" name="btn_Mantenimientos" class="btn btn-secondary dropdown-toggle bg-dark shadow-none border-0 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <ul class="dropdown-menu dropdown-menu-dark pb-3 px-2" aria-labelledby="btn_Mantenimientos>
                                     <li><a class="nav-link active" aria-current="page" href=""                      ></a></li>
-                                    <li><a class="nav-link active" aria-current="page" href="admin_user.php"        >Gestión de usuarios</a></li>
-                                    <li><a class="nav-link active" aria-current="page" href="admin_airplanes.php"   >Gestión de aviones</a></li>
+                                    <li><a class="nav-link active" aria-current="page" href="admin_user.php"        >• Gestión de usuarios</a></li>
+                                    <li><a class="nav-link active" aria-current="page" href="admin_airplanes.php"   >• Gestión de aviones</a></li>
+                                    <li><a class="nav-link active" aria-current="page" href="admin_routes.php"      >• Gestión de rutas</a></li>
                                 </ul>
                             </div>
                         </li>

@@ -86,7 +86,7 @@ if ($nrow > 0) {
     print_r( $_SESSION['username'] );
     echo "<hr>";
 
-    header("refresh:2; url=../../index.php");
+    header("refresh:0; url=../../index.php");
 
 } else if ($nrow == 0) {
 
@@ -96,7 +96,7 @@ if ($nrow > 0) {
     //  </script>';
 
     echo "<br>Nombre de usuario o contraseña incorrectos";
-    header("refresh:2; url=../../signin.php"); // linea temporal
+    header("refresh:0; url=../../signin.php"); // linea temporal
     //header("Location:../../signin.php");   // linea permanente
 }
 

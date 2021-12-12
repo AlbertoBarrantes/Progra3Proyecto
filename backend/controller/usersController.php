@@ -59,7 +59,7 @@ if (filter_input(INPUT_POST, 'action') != null) {
                 if ($action == "add_users") {
                     $myUsersBo->add($myUsers);
                     echo ('M~Registro Incluido Correctamente');
-                    header("refresh: 2; url=../../signin.php");
+                    header("refresh: 0; url=../../signin.php");
                 }
                 if ($action == "update_users") {
 
@@ -84,7 +84,7 @@ if (filter_input(INPUT_POST, 'action') != null) {
                     //echo "<hr><hr><hr><hr>";
 
                     echo ('M~Registro Modificado Correctamente');
-                    header("refresh: 2; url=../../profile.php");
+                    header("refresh: 0; url=../../profile.php");
                 }
             } else {
                 echo ("Error: Debe de llenar todos los datos");
