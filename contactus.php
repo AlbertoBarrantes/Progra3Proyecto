@@ -40,12 +40,12 @@ require_once('backend/public/navbar.php');
                         
                         ?>
                     </div>
-                    <div class="card-body">
+                    <div class="my-5 signup-form2 shadow text-center" style="max-width:350px !important;">
                         <form action="process.php" method="post">
-                            <input type="text" name="UName" placeholder="Nombre de usuario" class="form-control mb-2">
-                            <input type="email" name="Email" placeholder="Correo electronico" class="form-control mb-2">
-                            <input type="text" name="Subject" placeholder="Titulo" class="form-control mb-2">
-                            <textarea name="msg" class="form-control mb-2" placeholder="Escribe tu consulta"></textarea>
+                            <input type="text" name="UName" placeholder="Nombre de usuario" class="form-control">
+                            <input type="email" name="Email" placeholder="Correo electronico" class="form-control">
+                            <input type="text" name="Subject" placeholder="Titulo" class="form-control">
+                            <textarea name="msg" class="form-control" placeholder="Escribe tu consulta"></textarea>
                             <button class="btn btn-success" name="btn-send"> Enviar </button>
                         </form>
                     </div>
