@@ -20,7 +20,7 @@ require_once('backend/public/navbar.php');
     <div class="container">
         <div class="row">
             <div class="col-lg-6 m-auto">
-                <div class="card mt-5">
+                <div class="card mt-5 my-5 signup-form2 shadow text-center" style="max-width:350px !important;">
                     <div class="card-title">
                         <h2 class="text-center py-2"> Contactanos </h2>
                         <hr>
@@ -40,12 +40,21 @@ require_once('backend/public/navbar.php');
                         
                         ?>
                     </div>
-                    <div class="my-5 signup-form2 shadow text-center" style="max-width:350px !important;">
+                    <div class="card-body">
                         <form action="process.php" method="post">
-                            <input type="text" name="UName" placeholder="Nombre de usuario" class="form-control">
-                            <input type="email" name="Email" placeholder="Correo electronico" class="form-control">
-                            <input type="text" name="Subject" placeholder="Titulo" class="form-control">
-                            <textarea name="msg" class="form-control" placeholder="Escribe tu consulta"></textarea>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+                            <input type="text" name="UName" placeholder="Nombre de usuario" class="form-control mb-2">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-paper-plane"> </i></span>
+                            <input type="email" name="Email" placeholder="Correo electronico" class="form-control mb-2">
+                        </div>
+                        <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-comment"> </i></span>
+                            <input type="text" name="Subject" placeholder="Titulo" class="form-control mb-2">
+                        </div>
+                            <textarea name="msg" class="form-control mb-2" placeholder="Escribe tu consulta"></textarea>
                             <button class="btn btn-success" name="btn-send"> Enviar </button>
                         </form>
                     </div>
