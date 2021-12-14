@@ -88,8 +88,8 @@ $page_title = 'Mantenimiento de Usuarios';
 
 
     <!-- Mapa -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlJDp1mNCpUj8Yn2L-wfuNysxxZ_pmeKA&callback=initMap&v=weekly" async></script>
--->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlJDp1mNCpUj8Yn2L-wfuNysxxZ_pmeKA&callback=initMap&v=weekly" async></script>
+
 
 
 </head>

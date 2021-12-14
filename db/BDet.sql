@@ -3,8 +3,6 @@
 SELECT * FROM mydb.user;
 SELECT * FROM mydb.admin;
 
-
-
 SELECT * FROM mydb.country_o;
 SELECT * FROM mydb.city_o;
 

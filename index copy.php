@@ -84,93 +84,105 @@ require_once('backend/public/navbar.php');
       </div>
 
 
-      <br>
+      <!-- Origen Destino  -->
+      <div class="form-group d-sm-flex margin ">
 
-      <div class="row">
 
-        <!-- País Origen -->
-        <div class="form-group col-md-6 col-xs-12 my-sm-0 my-4 position-relative">
-          <label for="Origen" class="form-label ms-4">País Origen</label>
-          <select id="Origen" required placeholder="Origen" class="form-control" onchange="">
-          </select>
+        <!-- Origen -->
+        <div class="form-group">
+          <label for=" Origen" class="form-label ms-4">País Origen</label>
+          <div class="col d-flex align-items-center flex-fillXX me-sm-1 my-sm-0 my-4 position-relative">
+            <select id="Origen" required placeholder="Origen" class="form-control" onchange="">
+            </select>
+          </div>
         </div>
 
-        <!-- Ciudad de Origen -->
-        <div class="form-group col-md-6 col-xs-12 my-sm-0 my-4 position-relative">
-          <label for="city_o" class="form-label ms-4">Ciudad de Origen</label>
-          <select id="city_o" name="city_o" required class="form-control" onchange="">
-          </select>
-        </div>
 
-      </div>
-
-      <br>
-
-      <div class="row">
-
-        <!-- País Destino -->
-        <div class="form-group col-md-6 col-xs-12 my-sm-0 my-4 position-relative">
-          <label for="Destino" class="form-label ms-4">País Destino</label>
+        <!-- Destino -->
+        <div class="col d-flex align-items-center flex-fillXX ms-sm-1 my-sm-0 my-4 position-relative">
           <select id="Destino" required placeholder="Origen" class="form-control" onChange="">
           </select>
         </div>
 
-        <!-- Ciudad de Destino -->
-        <div class="form-group col-md-6 col-xs-12 my-sm-0 my-4 position-relative">
-          <label for="city_d" class="form-label ms-4">Ciudad de Destino</label>
+
+      </div>
+
+
+
+
+
+      <!-- Ciudades -->
+      <div class="form-group d-sm-flex margin ">
+
+
+        <!-- Ciudad de origen -->
+        <div class="col d-flex align-items-center flex-fillXX me-sm-1 my-sm-0 my-4 position-relative">
+          <select id="city_o" name="city_o" required class="form-control" onchange="">
+          </select>
+        </div>
+
+
+        <!-- Ciudad de destino -->
+        <div class="col d-flex align-items-center flex-fillXX ms-sm-1 my-sm-0 my-4 position-relative">
           <select id="city_d" name="city_d" required class="form-control" onChange="">
           </select>
         </div>
 
+
       </div>
 
-      <br>
 
 
-      <div class="row">
+
+
+
+      <!-- Fechas  -->
+      <div class="form-group d-sm-flex margin">
+
 
         <!-- Fecha salida -->
-        <div class="form-group col-md-6 col-xs-12 my-sm-0 my-4 position-relative">
-          <label for="departDate" class="form-label ms-4">Fecha de Salida</label>
+        <div class="col-sm-12 d-flex align-items-center flex-fill me-sm1X my-sm-0 position-relative">
+
           <!--<select id="departDate" name="departDate" required placeholder="Fecha de salida" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')">
-                </select>-->
+          </select>-->
+
           <input id="departDate" name="departDate" required placeholder="Fecha de salida" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" type="text">
           <div class="label" id="depart"></div>
         </div>
 
+
         <!-- Fecha regreso -->
-        <div id="returnDateDiv" class="form-group col-md-6 col-xs-12 my-sm-0 my-4 position-relative">
-          <label for="Destino" class="form-label ms-4">Fecha de Regreso</label>
+        <div id="divRD" class="col-sm-12 d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 position-relative">
           <input id="returnDate" type="text" required placeholder="Fecha de regreso" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')">
           <div class="label" id="return"></div>
         </div>
 
-      </div>
-
-      <br>
-
-      <div class="row">
-
-
-        <!-- Pasajeros -->
-        <div class="form-group">
-          <label for="Destino" class="form-label ms-4">Pasajeros</label>
-          <div class="form-group d-flex align-items-center position-relative col-6">
-            <input id="psngr" type="number" min="1" max="10" required placeholder="Pasajeros" class="form-control">
-          </div>
-
-        </div>
 
       </div>
+
+
+
+
+
+      <!-- Pasajeros -->
+      <div class="form-group d-flex align-items-center position-relative col-6">
+        <input id="psngr" type="number" min="1" max="10" required placeholder="Pasajeros" class="form-control">
+      </div>
+
+
 
 
       <!-- Boton buscar vuelos -->
       <div class="form-group my-3">
-        <button type="submit" class="btn btn-primary rounded-0 d-flex justify-content-center text-center p-3 mx-auto" onclick="">Reservar Vuelo
-      </div>
-  </div>
 
-  </form>
+        <button type="submit" class="btn btn-primary rounded-0 d-flex justify-content-center text-center p-3 mx-auto" onclick="
+                ">Reservar Vuelo
+      </div>
+
+
+
+
+    </form>
   </div>
   <!-- BUSCADOR DE VUELOS -->
 

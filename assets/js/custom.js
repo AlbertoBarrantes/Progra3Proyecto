@@ -238,7 +238,7 @@ function mostrar_ciudad_origen(id) {
     },
     type: 'POST',
     error: function () {
-      swal("Error", "Se presento un error al cargar la información", "error");
+      //swal("Error", "Se presento un error al cargar la información", "error");
     },
     success: function (data) {
 
@@ -283,7 +283,7 @@ function mostrar_pais_destino(idPaisOrigen, idCiudadOrigen) {
     },
     type: 'POST',
     error: function () {
-      swal("Error", "Se presento un error al cargar la información", "error");
+      //swal("Error", "Se presento un error al cargar la información", "error");
     },
     success: function (data) {
 
@@ -330,7 +330,7 @@ function mostrar_ciudad_destino(idPaisOrigen, idCiudadOrigen, idPaisDestino,) {
     },
     type: 'POST',
     error: function () {
-      swal("Error", "Se presento un error al cargar la información", "error");
+      //swal("Error", "Se presento un error al cargar la información", "error");
     },
     success: function (data) {
 
@@ -376,7 +376,7 @@ function mostrar_fecha_salida(idPaisOrigen, idCiudadOrigen, idPaisDestino, idCiu
     },
     type: 'POST',
     error: function () {
-      swal("Error", "Se presento un error al cargar la información", "error");
+      //swal("Error", "Se presento un error al cargar la información", "error");
     },
     success: function (data) {
 

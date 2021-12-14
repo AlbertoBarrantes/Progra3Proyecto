@@ -142,9 +142,12 @@ require_once('backend/public/navbar.php');
   </div>
 </div>
 
-</body>
 <?php
   require_once('backend/public/public_footer.php');
-  ?>
+?>
+
+</body>
+
+
 
 </html>
