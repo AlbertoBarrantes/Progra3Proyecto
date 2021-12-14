@@ -190,76 +190,8 @@ function Check1() {
 
 
 
-function fun1() {
 
-
-  // notice the quotes around the ?php tag         
-  var htmlString = '<?php $htmlString= "testing"; echo $htmlString; ?>';
-  alert(htmlString);
-
-}
-
-
-
-
-
-
-
-
-
-
-// function modDestino(selectedData) {
-
-//   console.log("-_-! modDestino()");
-
-//   var serviceEndpoint = '../../backend\controller\fillDataController.php'
-//   $.ajax({
-//     type: 'POST',
-//     url: serviceEndpoint,
-//     dataType: 'json',
-//     contentType: 'json',
-//     headers: { 'api-key': 'myKey' },
-//     success: function (data) {
-//       $('state').html(data);
-//     }
-//   });
-
-// }
-
-
-
-
-
-
-
-
-
-
-// function selectDestino() {
-
-//   //var dist = $('#Origen');
-//   var dist = $('#Origen').val();
-//   //console.log("ID de origen: " + dist );
-//   //var Resultado = mostrar_Destino(dist.val());
-//   var Resultado = mostrar_Destino(dist);
-
-//   if (Resultado.lenght > 0) {
-//     console.log(Resultado);
-//     $('#Destino').html(Resultado);
-//   }
-
-// }
-
-
-
-
-
-
-
-
-
-
-function mostrar_Origen() {
+function mostrar_pais_origen() {
 
   var Resultados = '';
 
@@ -281,48 +213,10 @@ function mostrar_Origen() {
 
   }, 'json');
 
-  
+
 
 }
 
-
-
-
-
-
-
-
-
-
-function mostrar_Destino(id) {
-
-  $.ajax({
-
-    url: 'backend/controller/CB_PaisDestino.php',
-    data: {
-      id: id
-    },
-    type: 'POST',
-    error: function () {
-      swal("Error", "Se presento un error al cargar la información", "error");
-    },
-    success: function (data) {
-
-      $('#Destino').empty()
-      $(data).each(function (row) {
-
-        Resultados = '<option value="' + data[row].id + '">' + data[row].name + '</option>';
-        //console.log("ID: " + data[row].id + ",     Ciudad: " + data[row].name);
-
-        $('#Destino').append(Resultados);
-
-      });
-
-    }
-
-  });
-
-}
 
 
 
@@ -352,30 +246,15 @@ function mostrar_ciudad_origen(id) {
       $(data).each(function (row) {
 
         Resultados = '<option value="' + data[row].id + '">' + data[row].name + '</option>';
-        //console.log("ID: " + data[row].id + ",     Ciudad: " + data[row].name);
 
         $('#city_o').append(Resultados);
 
       });
 
-      mostrar_Destino($('#city_o').val());
+      mostrar_pais_destino($('#Origen').val(), $('#city_o').val());
     }
 
-    
-
   });
-
-
-  // var Resultados = '';
-
-  // $.get('backend/controller/CB_CiudadOrigen.php', function (data) {
-
-
-  // }, 'json');
-
-
-
-
 
 }
 
@@ -383,29 +262,174 @@ function mostrar_ciudad_origen(id) {
 
 
 
-$(document).ready(function() {
-  
-  mostrar_Origen();
-  
+
+
+
+
+
+
+
+
+
+
+function mostrar_pais_destino(idPaisOrigen, idCiudadOrigen) {
+
+  $.ajax({
+
+    url: 'backend/controller/CB_PaisDestino.php',
+    data: {
+      idPaisOrigen: idPaisOrigen,
+      idCiudadOrigen: idCiudadOrigen
+    },
+    type: 'POST',
+    error: function () {
+      swal("Error", "Se presento un error al cargar la información", "error");
+    },
+    success: function (data) {
+
+      $('#Destino').empty()
+      $(data).each(function (row) {
+
+        Resultados = '<option value="' + data[row].id + '">' + data[row].name + '</option>';
+
+        $('#Destino').append(Resultados);
+
+      });
+
+      mostrar_ciudad_destino($('#Origen').val(), $('#city_o').val(), $('#Destino').val());
+
+    }
+
+  });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function mostrar_ciudad_destino(idPaisOrigen, idCiudadOrigen, idPaisDestino,) {
+
+  $.ajax({
+
+    url: 'backend/controller/CB_CiudadDestino.php',
+    data: {
+      idPaisOrigen: idPaisOrigen,
+      idCiudadOrigen: idCiudadOrigen,
+      idPaisDestino: idPaisDestino
+    },
+    type: 'POST',
+    error: function () {
+      swal("Error", "Se presento un error al cargar la información", "error");
+    },
+    success: function (data) {
+
+      $('#city_d').empty()
+      $(data).each(function (row) {
+
+        Resultados = '<option value="' + data[row].id + '">' + data[row].name + '</option>';
+
+        $('#city_d').append(Resultados);
+
+      });
+
+      mostrar_fecha_salida($('#Origen').val(), $('#city_o').val(), $('#Destino').val(), $('#city_d').val());
+
+    }
+
+  });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function mostrar_fecha_salida(idPaisOrigen, idCiudadOrigen, idPaisDestino, idCiudadDestino) {
+
+  $.ajax({
+
+    url: 'backend/controller/CB_FechaSalida.php',
+    data: {
+      idPaisOrigen: idPaisOrigen,
+      idCiudadOrigen: idCiudadOrigen,
+      idPaisDestino: idPaisDestino,
+      idCiudadDestino: idCiudadDestino
+    },
+    type: 'POST',
+    error: function () {
+      swal("Error", "Se presento un error al cargar la información", "error");
+    },
+    success: function (data) {
+
+      $('#departDate').empty()
+      $(data).each(function (row) {
+
+        Resultados = '<option value="' + data[row].id + '">' + data[row].name + '</option>';
+
+        $('#departDate').append(Resultados);
+
+      });
+
+    }
+
+  });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function () {
+
+  mostrar_pais_origen();
+
   $('#Origen').change(function () {
 
     mostrar_ciudad_origen($('#Origen').val());
-    //mostrar_Origen();
-
-
-    // $('#Destino').empty()
-    //   .attr('disabled', false)
-    // selectDestino();
-    //mostrar_Destino();
+    mostrar_pais_destino($('#Origen').val(), $('#city_o').val());
+    mostrar_ciudad_destino($('#Origen').val(), $('#city_o').val(), $('#Destino').val());
   });
 
+  $('#city_o').change(function () {
+    mostrar_pais_destino($('#Origen').val(), $('#city_o').val());
+    mostrar_ciudad_destino($('#Origen').val(), $('#city_o').val(), $('#Destino').val());
+  });
 
-   $('#city_o').change(function () {
+  $('#Destino').change(function () {
+    mostrar_ciudad_destino($('#Origen').val(), $('#city_o').val(), $('#Destino').val());
+  });
 
-     mostrar_Destino($('#city_o').val());
-
-
-   });
+  $('#city_d').change(function () {
+    mostrar_fecha_salida($('#Origen').val(), $('#city_o').val(), $('#Destino').val(), $('#city_d').val());
+  });
 
 });
 

@@ -2,7 +2,8 @@
 
 require_once('../dao/conexion.php');  
 
-$id = $_POST['id'];
+$idPaisOrigen = $_POST['idPaisOrigen'];
+$idCiudadOrigen = $_POST['idCiudadOrigen'];
 
 $conn = new Conexion();
 
@@ -13,12 +14,12 @@ $query =	"
 			JOIN mydb.country_o  ON  mydb.country_o.id  =  mydb.city_o.country_o_id
 			JOIN mydb.city_d     ON  mydb.city_d.id     =  mydb.route.city_d_id
 			JOIN mydb.country_d  ON  mydb.country_d.id  =  mydb.city_d.country_d_id
-			WHERE mydb.city_o.id = ?;
+			WHERE mydb.country_o.id = ? AND mydb.city_o.id = ?;
 			";
 
 // prepare and bind
 $stmt = $conn->prepare($query);
-$stmt->bind_param("i", $id);
+$stmt->bind_param("ii", $idPaisOrigen, $idCiudadOrigen);
 
 // set parameters and execute
 $stmt->execute();
@@ -36,27 +37,6 @@ $stmt->close();
 $conn->close();
 
 
-// require_once('../dao/conexion.php');  
-
-//   $Conexion = new Conexion();
-//   $Consulta = 	"
-// 					SELECT R.city_o_id, R.city_d_id, CD.city_name
-// 					FROM mydb.route R
-// 					JOIN mydb.city_o CO ON CO.city_id = R.city_o_id
-// 					JOIN mydb.city_d CD ON CD.city_id = R.city_d_id;
-// 				";
-
-//   $Resultado = $Conexion->query($Consulta);
-
-//    	    if($Resultado->num_rows > 0){
-//    	    	while($Fila = $Resultado->fetch_assoc()){
-//    	    		$data[] = $Fila;
-//    	    	}
-
-//    	    	// Imprime en Json
-// 			header('Content-Type: application/json');
-// 			echo json_encode($data, JSON_PRETTY_PRINT);
-//    	    }
 ?>
 
 

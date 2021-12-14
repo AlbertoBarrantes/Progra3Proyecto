@@ -23,7 +23,7 @@ require_once('backend/public/navbar.php');
                 <div class="card mt-5 my-5 signup-form2 shadow text-center" style="max-width:350px !important;">
                     <div class="card-title">
                         <h2 class="text-center py-2"> Contactanos </h2>
-                        <hr>
+                        <br>
                         <?php 
                             $Msg = "";
                             if(isset($_GET['error']))
@@ -54,7 +54,10 @@ require_once('backend/public/navbar.php');
                         <span class="input-group-addon"><i class="fa fa-comment"> </i></span>
                             <input type="text" name="Subject" placeholder="Titulo" class="form-control mb-2">
                         </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-comment"> </i></span>
                             <textarea name="msg" class="form-control mb-2" placeholder="Escribe tu consulta"></textarea>
+                        </div>
                             <button class="btn btn-success" name="btn-send"> Enviar </button>
                         </form>
                     </div>

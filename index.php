@@ -82,7 +82,6 @@ require_once('backend/public/navbar.php');
           <input value="1" type="radio" id="radio2" name="radio" onclick="Check1()">Solo ida <span class="checkmark"></span>
         </label>
       </div>
-      <!-- Radio Buttons -->
 
 
       <!-- Origen Destino  -->
@@ -94,7 +93,6 @@ require_once('backend/public/navbar.php');
           <select id="Origen" required placeholder="Origen" class="form-control" onchange="">
           </select>
         </div>
-        <!-- Origen -->
 
 
         <!-- Destino -->
@@ -102,7 +100,6 @@ require_once('backend/public/navbar.php');
           <select id="Destino" required placeholder="Origen" class="form-control" onChange="">
           </select>
         </div>
-        <!-- Destino -->
 
 
       </div>
@@ -132,24 +129,33 @@ require_once('backend/public/navbar.php');
       </div>
 
 
-      
+
 
 
 
       <!-- Fechas  -->
       <div class="form-group d-sm-flex margin">
+
+
         <!-- Fecha salida -->
         <div class="col-sm-12 d-flex align-items-center flex-fill me-sm1X my-sm-0 position-relative">
-          <input id="departDate" required placeholder="Fecha de salida" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" type="text">
+
+          <!--<select id="departDate" name="departDate" required placeholder="Fecha de salida" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')">
+          </select>-->
+
+          <input id="departDate" name="departDate" required placeholder="Fecha de salida" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" type="text">
           <div class="label" id="depart"></div>
         </div>
+
+
         <!-- Fecha regreso -->
         <div id="divRD" class="col-sm-12 d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 position-relative">
           <input id="returnDate" type="text" required placeholder="Fecha de regreso" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')">
           <div class="label" id="return"></div>
         </div>
+
+
       </div>
-      <!-- Fechas  -->
 
 
 
@@ -163,38 +169,12 @@ require_once('backend/public/navbar.php');
 
 
 
-
       <!-- Boton buscar vuelos -->
       <div class="form-group my-3">
 
         <button type="submit" class="btn btn-primary rounded-0 d-flex justify-content-center text-center p-3 mx-auto" onclick="
-
-                // var rSelected = document.forms.formVuelos.elements.radio.value;
-
-                // alert(  'Valor radio: ' + rSelected
-                //       + '\n-------------------------' 
-                //       + '\nid origen: ' + document.getElementById('Origen').value 
-                //       + '\nid destino: ' + document.getElementById('Destino').value
-                //       + '\n-------------------------'
-                //       + '\nFecha de Salida:  ' + document.getElementById('departDate').value
-                //       + '\nFecha de Regreso:  ' + document.getElementById('returnDate').value
-                //       + '\n-------------------------'
-                //       + '\nPasajeros: ' + document.getElementById('psngr').value
-
-                //       );
-        
                 ">Reservar Vuelo
       </div>
-      <!-- Boton buscar vuelos-->
-
-
-
-
-
-  <script>   
-</script>
-
-
 
 
 
@@ -224,7 +204,6 @@ require_once('backend/public/navbar.php');
         <p><b>Hasta un 30%</b></p>
         <p>***************</p>
       </div>
-      <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
       <img class="card-img-top" src="assets/img/cards/lasvegas.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
@@ -235,7 +214,6 @@ require_once('backend/public/navbar.php');
         <p><b>Hasta un 10%</b></p>
         <p>***************</p>
       </div>
-      <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
       <img class="card-img-top" src="assets/img/cards/buenosaires.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
@@ -246,7 +224,6 @@ require_once('backend/public/navbar.php');
         <p><b>Hasta un 15%</b></p>
         <p>***************</p>
       </div>
-      <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
   </div>
 
@@ -264,7 +241,6 @@ require_once('backend/public/navbar.php');
         <p><b>Hasta un 5%</b></p>
         <p>***************</p>
       </div>
-      <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
       <img class="card-img-top" src="assets/img/cards/machupicchu.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
@@ -275,7 +251,6 @@ require_once('backend/public/navbar.php');
         <p><b>Hasta un 5%</b></p>
         <p>***************</p>
       </div>
-      <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
       <img class="card-img-top" src="assets/img/cards/islascaiman.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
@@ -286,7 +261,6 @@ require_once('backend/public/navbar.php');
         <p><b>Hasta un 5%</b></p>
         <p>***************</p>
       </div>
-      <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
   </div>
   <!-- CARDS -->

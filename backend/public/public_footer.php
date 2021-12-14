@@ -6,16 +6,13 @@
 
       <section class="mb-4">
         <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" target="_blank"
-          role="button"><i class="bi bi-facebook"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" target="_blank" role="button"><i class="bi bi-facebook"></i></a>
 
         <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Twitter.com" target="_blank"
-          role="button"><i class="bi bi-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Twitter.com" target="_blank" role="button"><i class="bi bi-twitter"></i></a>
 
         <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Instagram.com" target="_blank"
-          role="button"><i class="bi bi-instagram"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.Instagram.com" target="_blank" role="button"><i class="bi bi-instagram"></i></a>
 
       </section>
       <!-- Section: Social media -->
@@ -32,7 +29,12 @@
       <!-- Section: Links -->
       <section class="">
         <!--Grid row-->
-        <div class="row">
+        <div class="row d-flex justify-content-center">
+
+
+          <!--Grid column-->
+
+
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Contáctenos</h5>
@@ -49,7 +51,7 @@
               </li>
             </ul>
           </div>
-          <!--Grid column-->
+
 
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -57,18 +59,19 @@
 
             <ul class="list-unstyled mb-0">
               <li>
-              <a href="contactus.php" class="text-white">Contactanos</a>
+                <a href="contactus.php" class="text-white">Contáctanos</a>
+              </li>
+              <li>
+                <a href="history.php" class="text-white">Historia de Easy Travel</a>
+              <li>
+                <a href="" class="text-white"></a>
               </li>
             </ul>
           </div>
-          <!--Grid column-->
+
 
           <!--Grid column-->
-
-          <!--Grid column-->
-
-          <!--Grid column-->
-
+          
 
         </div>
         <!--Grid row-->
