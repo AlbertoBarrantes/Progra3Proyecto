@@ -167,7 +167,7 @@ $page_title = 'Mantenimiento de Usuarios';
                                 <label for="date" class="form-label ms-4">Fecha de Nacimiento</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                    <input id="birth_date" name="birth_date" value="" type="date" class="form-control" required="required" />
+                                    <input id="birth_date" name="birth_date" value="" class="form-control" required="required" onfocus="(this.type='date')" onblur="(this.type='text')"/>
                                     <span id="startDateSelected"></span>
                                 </div>
                             </div>

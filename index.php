@@ -92,115 +92,47 @@ require_once('backend/public/navbar.php');
         <!-- Origen -->
         <div class="col d-flex align-items-center flex-fillXX me-sm-1 my-sm-0 my-4 position-relative">
           <select id="Origen" required placeholder="Origen" class="form-control" onchange="">
-
           </select>
         </div>
         <!-- Origen -->
 
 
-
         <!-- Destino -->
         <div class="col d-flex align-items-center flex-fillXX ms-sm-1 my-sm-0 my-4 position-relative">
           <select id="Destino" required placeholder="Origen" class="form-control" onChange="">
-            <!-- <option>País de destino</option> -->
-
-
-            <!-- temporal -->
-            <script>
-              $('#Origen').change(function() {
-                //var sel = document.getElementById('Origen');
-                //var opt = sel.options[sel.selectedIndex];
-                //alert(opt.text);
-              });
-            </script>
-            <!-- temporal -->
-
-
           </select>
         </div>
         <!-- Destino -->
 
 
-
-        <script>
-          $(document).ready(function() {
-
-            mostrar_Origen();
-            mostrar_Destino(1);
-
-            $('#Origen').change(function() {
-              $('#Destino').empty()
-                .attr('disabled', false)
-              selectDestino();
-            });
-
-          });
+      </div>
 
 
 
 
-          function selectDestino() {
-            //var dist = $('#Origen');
-            var dist = $('#Origen').val();
-            //console.log("ID de origen: " + dist );
-            //var Resultado = mostrar_Destino(dist.val());
-            var Resultado = mostrar_Destino(dist);
 
-            if (Resultado.lenght > 0) {
-              console.log(Resultado);
-              $('#Destino').html(Resultado);
-            }
-          }
+      <!-- Ciudades -->
+      <div class="form-group d-sm-flex margin ">
 
 
-
-          function mostrar_Origen(data) {
-            var Resultados = '';
-
-            $.get('backend/controller/CB_PaisOrigen.php', function(data) {
-
-              $(data).each(function(row) {
-                var id_origen = data[row].city_id;
-                var origen = data[row].city_name;
-
-                Resultados = '<option value="' + id_origen + '">' + origen + '</option>';
-                console.log("ID: " + id_origen + ",     País: " + origen);
-
-                $('#Origen').append(Resultados);
-              });
-            }, 'json');
-          }
+        <!-- Ciudad de origen -->
+        <div class="col d-flex align-items-center flex-fillXX me-sm-1 my-sm-0 my-4 position-relative">
+          <select id="city_o" name="city_o" required class="form-control" onchange="">
+          </select>
+        </div>
 
 
-
-          function mostrar_Destino(data_destino) {
-            var Resultado = '';
-
-
-            $.get('backend/controller/CB_PaisDestino.php', function(data) {
-
-
-              $(data).each(function(row) {
-                var id_destino = data[row].city_d_id;
-                var id_origen = data[row].city_o_id;
-                var destino = data[row].city_name;
-
-                if (data_destino == id_origen) {
-                  Resultado = '<option value="' + id_destino + '">' + destino + '</option>';
-
-                  $('#Destino').append(Resultado);
-                }
-              });
-            }, 'json');
-            return Resultado;
-          }
-        </script>
+        <!-- Ciudad de destino -->
+        <div class="col d-flex align-items-center flex-fillXX ms-sm-1 my-sm-0 my-4 position-relative">
+          <select id="city_d" name="city_d" required class="form-control" onChange="">
+          </select>
+        </div>
 
 
       </div>
-      <!-- Origen Destino  -->
 
 
+      
 
 
 
@@ -237,23 +169,31 @@ require_once('backend/public/navbar.php');
 
         <button type="submit" class="btn btn-primary rounded-0 d-flex justify-content-center text-center p-3 mx-auto" onclick="
 
-                var rSelected = document.forms.formVuelos.elements.radio.value;
+                // var rSelected = document.forms.formVuelos.elements.radio.value;
 
-                alert(  'Valor radio: ' + rSelected
-                      + '\n-------------------------' 
-                      + '\nid origen: ' + document.getElementById('Origen').value 
-                      + '\nid destino: ' + document.getElementById('Destino').value
-                      + '\n-------------------------'
-                      + '\nFecha de Salida:  ' + document.getElementById('departDate').value
-                      + '\nFecha de Regreso:  ' + document.getElementById('returnDate').value
-                      + '\n-------------------------'
-                      + '\nPasajeros: ' + document.getElementById('psngr').value
+                // alert(  'Valor radio: ' + rSelected
+                //       + '\n-------------------------' 
+                //       + '\nid origen: ' + document.getElementById('Origen').value 
+                //       + '\nid destino: ' + document.getElementById('Destino').value
+                //       + '\n-------------------------'
+                //       + '\nFecha de Salida:  ' + document.getElementById('departDate').value
+                //       + '\nFecha de Regreso:  ' + document.getElementById('returnDate').value
+                //       + '\n-------------------------'
+                //       + '\nPasajeros: ' + document.getElementById('psngr').value
 
-                      );
+                //       );
         
                 ">Reservar Vuelo
       </div>
       <!-- Boton buscar vuelos-->
+
+
+
+
+
+  <script>   
+</script>
+
 
 
 
@@ -280,25 +220,31 @@ require_once('backend/public/navbar.php');
       <div class="card-body">
         <h5 class="card-title">Ciudad de Mexico</h5>
         <p class="card-text">Encontra los mejores descuentos </p>
-       <p>***************</p> <p><b>Hasta un 30%</b></p><p>***************</p>
+        <p>***************</p>
+        <p><b>Hasta un 30%</b></p>
+        <p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
       <img class="card-img-top" src="assets/img/cards/lasvegas.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-      <h5 class="card-title">Las Vegas</h5>
+        <h5 class="card-title">Las Vegas</h5>
         <p class="card-text">Encontra los mejores descuentos </p>
-       <p>***************</p> <p><b>Hasta un 10%</b></p><p>***************</p>
+        <p>***************</p>
+        <p><b>Hasta un 10%</b></p>
+        <p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
       <img class="card-img-top" src="assets/img/cards/buenosaires.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-      <h5 class="card-title">Buenos Aires</h5>
+        <h5 class="card-title">Buenos Aires</h5>
         <p class="card-text">Encontra los mejores descuentos </p>
-       <p>***************</p> <p><b>Hasta un 15%</b></p><p>***************</p>
+        <p>***************</p>
+        <p><b>Hasta un 15%</b></p>
+        <p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
@@ -312,27 +258,33 @@ require_once('backend/public/navbar.php');
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
       <img class="card-img-top" src="assets/img/cards/tokyo.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-      <h5 class="card-title">Tokyo</h5>
+        <h5 class="card-title">Tokyo</h5>
         <p class="card-text">Encontra los mejores descuentos </p>
-       <p>***************</p> <p><b>Hasta un 5%</b></p><p>***************</p>
+        <p>***************</p>
+        <p><b>Hasta un 5%</b></p>
+        <p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
       <img class="card-img-top" src="assets/img/cards/machupicchu.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-      <h5 class="card-title">Machu Picchu</h5>
+        <h5 class="card-title">Machu Picchu</h5>
         <p class="card-text">Encontra los mejores descuentos </p>
-       <p>***************</p> <p><b>Hasta un 5%</b></p><p>***************</p>
+        <p>***************</p>
+        <p><b>Hasta un 5%</b></p>
+        <p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
     <div class="card mx-3" style="border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px;">
       <img class="card-img-top" src="assets/img/cards/islascaiman.jpg" alt="Card image cap" style="border-radius: 10px 10px 0px 0px; -webkit-border-radius: 10px 10px 0px 0px; -moz-border-radius: 10px 10px 0px 0px;">
       <div class="card-body">
-      <h5 class="card-title">Islas Caiman</h5>
+        <h5 class="card-title">Islas Caiman</h5>
         <p class="card-text">Encontra los mejores descuentos </p>
-       <p>***************</p> <p><b>Hasta un 5%</b></p><p>***************</p>
+        <p>***************</p>
+        <p><b>Hasta un 5%</b></p>
+        <p>***************</p>
       </div>
       <a href="#" class="btn btn-primary w-75 mx-auto mt-1 mb-4">Ver descuento</a>
     </div>
@@ -345,7 +297,9 @@ require_once('backend/public/navbar.php');
 
   <!-- HISTORIA -->
   <div class="w-50 mx-auto my-5">
-    <a href="history.php"><h1 class="mb-4 ">Los orígenes de una de las aerolíneas más importantes.</h1></a>
+    <a href="history.php">
+      <h1 class="mb-4 ">Los orígenes de una de las aerolíneas más importantes.</h1>
+    </a>
 
     <img style="max-width: 400px;" class="rounded float-start me-4 mb-3" src="assets/img/history section/plane.png" alt="Card image cap">
     <p>Nuestra empresa fue fundada en 2010 por Roberto Souviron mientras realizaba su MBA en Estados Unidos.
@@ -377,5 +331,10 @@ require_once('backend/public/navbar.php');
   ?>
 
 </body>
+
+
+
+
+
 
 </html>

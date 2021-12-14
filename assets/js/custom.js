@@ -4,51 +4,51 @@
 
 function enableInput() {
 
-    document.getElementById("divBtnMod").className = "collapse";
-    document.getElementById("divBtnSave").className = "collapse.show";
-    document.getElementById("divBtnExit").className = "collapse.show";
-  
-    //document.getElementById("username").readOnly = false;
-    document.getElementById("name").readOnly = false;
-    document.getElementById("last_name1").readOnly = false;
-    document.getElementById("last_name2").readOnly = false;
-    document.getElementById("birth_date").readOnly = false;
-    document.getElementById("email").readOnly = false;
-    document.getElementById("work_phone").readOnly = false;
-    document.getElementById("personal_phone").readOnly = false;
-    document.getElementById("password").readOnly = false;
-    document.getElementById("address").readOnly = false;
+  document.getElementById("divBtnMod").className = "collapse";
+  document.getElementById("divBtnSave").className = "collapse.show";
+  document.getElementById("divBtnExit").className = "collapse.show";
 
-    document.getElementById("divX").style.pointerEvents = "all";
-    console.log("enableInput() ok");
-  }
-  
-  function disableInput() {
-  
-    document.getElementById("divBtnMod").className = "collapse.show";
-    document.getElementById("divBtnSave").className = "collapse";
-    document.getElementById("divBtnExit").className = "collapse";
-  
-    document.getElementById("username").readOnly = true;
-    document.getElementById("name").readOnly = true;
-    document.getElementById("last_name1").readOnly = true;
-    document.getElementById("last_name2").readOnly = true;
-    document.getElementById("birth_date").readOnly = true;
-    document.getElementById("email").readOnly = true;
-    document.getElementById("work_phone").readOnly = true;
-    document.getElementById("personal_phone").readOnly = true;
-    document.getElementById("password").readOnly = true;
-    document.getElementById("address").readOnly = true;
+  //document.getElementById("username").readOnly = false;
+  document.getElementById("name").readOnly = false;
+  document.getElementById("last_name1").readOnly = false;
+  document.getElementById("last_name2").readOnly = false;
+  document.getElementById("birth_date").readOnly = false;
+  document.getElementById("email").readOnly = false;
+  document.getElementById("work_phone").readOnly = false;
+  document.getElementById("personal_phone").readOnly = false;
+  document.getElementById("password").readOnly = false;
+  document.getElementById("address").readOnly = false;
 
-    document.getElementById("divX").style.pointerEvents = "none";
-    console.log("disableInput() ok");
-  }
-  
-  function discardModification() {
-    window.location.reload(true);
-    console.log("discardModification() ok");
-    return false;
-  }
+  document.getElementById("divX").style.pointerEvents = "all";
+  console.log("enableInput() ok");
+}
+
+function disableInput() {
+
+  document.getElementById("divBtnMod").className = "collapse.show";
+  document.getElementById("divBtnSave").className = "collapse";
+  document.getElementById("divBtnExit").className = "collapse";
+
+  document.getElementById("username").readOnly = true;
+  document.getElementById("name").readOnly = true;
+  document.getElementById("last_name1").readOnly = true;
+  document.getElementById("last_name2").readOnly = true;
+  document.getElementById("birth_date").readOnly = true;
+  document.getElementById("email").readOnly = true;
+  document.getElementById("work_phone").readOnly = true;
+  document.getElementById("personal_phone").readOnly = true;
+  document.getElementById("password").readOnly = true;
+  document.getElementById("address").readOnly = true;
+
+  document.getElementById("divX").style.pointerEvents = "none";
+  console.log("disableInput() ok");
+}
+
+function discardModification() {
+  window.location.reload(true);
+  console.log("discardModification() ok");
+  return false;
+}
 
 
 
@@ -98,7 +98,7 @@ function initMap() {
   responseDiv = document.createElement("div");
   responseDiv.id = "response-container";
   responseDiv.appendChild(response);
-  
+
 
   const instructionsElement = document.createElement("p");
 
@@ -142,15 +142,15 @@ function geocode(request) {
       marker.setMap(map);
       responseDiv.style.display = "block";
       response.innerText = JSON.stringify(result, null, 2);
-      
-     
+
+
       //console.log("Dirección: ", results[0].address_components[1].long_name);
       //console.log(results[0].address_components[2].long_name);
       //console.log(results[0].address_components[3].long_name);
-    
+
       result2 = results[0].address_components[1].long_name
-                + ", " + results[0].address_components[2].long_name
-                + ", " + results[0].address_components[3].long_name;
+        + ", " + results[0].address_components[2].long_name
+        + ", " + results[0].address_components[3].long_name;
 
       document.getElementById("address").value = result2;
 
@@ -173,27 +173,13 @@ function geocode(request) {
 
 
 function Check1() {
-    if (document.getElementById('radio1').checked) {
-        document.getElementById('returnDate').className = '.d-block, form-control';
-        
-    } else {
-        document.getElementById('returnDate').className = 'd-none';
-    }
+  if (document.getElementById('radio1').checked) {
+    document.getElementById('returnDate').className = '.d-block, form-control';
+
+  } else {
+    document.getElementById('returnDate').className = 'd-none';
   }
-
-
-
-
-
-  function fun1() {
-
-
-
-      // notice the quotes around the ?php tag         
-      var htmlString= '<?php $htmlString= "testing"; echo $htmlString; ?>';
-      alert(htmlString);
-
-  }
+}
 
 
 
@@ -203,95 +189,140 @@ function Check1() {
 
 
 
-  function modDestino(selectedData) {
 
-    console.log("-_-! modDestino()");
-
+function fun1() {
 
 
-    var serviceEndpoint = '../../backend\controller\fillDataController.php'
-    $.ajax({
-      type: 'POST', 
-      url: serviceEndpoint,
-      dataType: 'json',
-      contentType: 'json',
-      headers: { 'api-key':'myKey' },
-      success: function(data){
-        $('state').html(data);
-      }
+  // notice the quotes around the ?php tag         
+  var htmlString = '<?php $htmlString= "testing"; echo $htmlString; ?>';
+  alert(htmlString);
+
+}
+
+
+
+
+
+
+
+
+
+
+// function modDestino(selectedData) {
+
+//   console.log("-_-! modDestino()");
+
+//   var serviceEndpoint = '../../backend\controller\fillDataController.php'
+//   $.ajax({
+//     type: 'POST',
+//     url: serviceEndpoint,
+//     dataType: 'json',
+//     contentType: 'json',
+//     headers: { 'api-key': 'myKey' },
+//     success: function (data) {
+//       $('state').html(data);
+//     }
+//   });
+
+// }
+
+
+
+
+
+
+
+
+
+
+// function selectDestino() {
+
+//   //var dist = $('#Origen');
+//   var dist = $('#Origen').val();
+//   //console.log("ID de origen: " + dist );
+//   //var Resultado = mostrar_Destino(dist.val());
+//   var Resultado = mostrar_Destino(dist);
+
+//   if (Resultado.lenght > 0) {
+//     console.log(Resultado);
+//     $('#Destino').html(Resultado);
+//   }
+
+// }
+
+
+
+
+
+
+
+
+
+
+function mostrar_Origen() {
+
+  var Resultados = '';
+
+  $.get('backend/controller/CB_PaisOrigen.php', function (data) {
+
+    $(data).each(function (row) {
+
+      var id_origen = data[row].id;
+      var origen = data[row].name;
+
+      Resultados = '<option value="' + id_origen + '">' + origen + '</option>';
+      console.log("ID: " + id_origen + ",     País: " + origen);
+
+      $('#Origen').append(Resultados);
+
     });
 
+    mostrar_ciudad_origen($('#Origen').val());
 
+  }, 'json');
 
-
-
-
-
-
-
-
-/*
-              
-    $('#state').html('');
-    $.ajax({
-      type: 'post',
-      url: '../../backend\controller\fillDataController.php',
-      data: { postData: selectedData},
-      success: function(data){
-        $('state').html(data);
-      }
-
-
-
-    });
-
-*/
-
-
-
-/*
-    var csrftoken = $.cookie('csrftoken');
-
-    function csrfSafeMethod(method) {
-        // these HTTP methods do not require CSRF protection
-        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-    }
-    
-    $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
-            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-        }
-    });
-
-
-    $.ajax(save_url, {
-      type : 'POST',
-      contentType : 'application/json',
-      data : JSON.stringify(canvas),
-      success: function () {
-          alert("Saved!");
-      }
   
-  })
 
-    
+}
+
+
+
+
+
+
+
+
+
+
+function mostrar_Destino(id) {
+
   $.ajax({
-    type: 'POST',
-    url: '../../backend\controller\fillDataController.php',
-    headers: {//<==
-      "X-CSRFTOKEN": "{{ csrf_token }}"//<==
-    },
+
+    url: 'backend/controller/CB_PaisDestino.php',
     data: {
-      'test': 'test', 
-      'name': 0, 
-      'asdf': 'asdf'},
-    success: function(){
-      console.log('Hola funciona x2');  
+      id: id
+    },
+    type: 'POST',
+    error: function () {
+      swal("Error", "Se presento un error al cargar la información", "error");
+    },
+    success: function (data) {
+
+      $('#Destino').empty()
+      $(data).each(function (row) {
+
+        Resultados = '<option value="' + data[row].id + '">' + data[row].name + '</option>';
+        //console.log("ID: " + data[row].id + ",     Ciudad: " + data[row].name);
+
+        $('#Destino').append(Resultados);
+
+      });
+
     }
-  });      
-*/
+
+  });
+
+}
 
 
 
@@ -303,60 +334,133 @@ function Check1() {
 
 
 
+function mostrar_ciudad_origen(id) {
 
+  $.ajax({
 
+    url: 'backend/controller/CB_CiudadOrigen.php',
+    data: {
+      id: id
+    },
+    type: 'POST',
+    error: function () {
+      swal("Error", "Se presento un error al cargar la información", "error");
+    },
+    success: function (data) {
 
+      $('#city_o').empty()
+      $(data).each(function (row) {
 
+        Resultados = '<option value="' + data[row].id + '">' + data[row].name + '</option>';
+        //console.log("ID: " + data[row].id + ",     Ciudad: " + data[row].name);
 
+        $('#city_o').append(Resultados);
 
+      });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      mostrar_Destino($('#city_o').val());
+    }
 
     
 
-  }
+  });
+
+
+  // var Resultados = '';
+
+  // $.get('backend/controller/CB_CiudadOrigen.php', function (data) {
+
+
+  // }, 'json');
+
+
+
+
+
+}
+
+
+
+
+
+$(document).ready(function() {
+  
+  mostrar_Origen();
+  
+  $('#Origen').change(function () {
+
+    mostrar_ciudad_origen($('#Origen').val());
+    //mostrar_Origen();
+
+
+    // $('#Destino').empty()
+    //   .attr('disabled', false)
+    // selectDestino();
+    //mostrar_Destino();
+  });
+
+
+   $('#city_o').change(function () {
+
+     mostrar_Destino($('#city_o').val());
+
+
+   });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -380,15 +484,15 @@ function Check1() {
 function clickTest() {
 
   alert("Prueba de Formulario"
-      + "\nusername: " + document.getElementById("username").value
-      + "\nname: " + document.getElementById("name").value
-      + "\nflastname: " + document.getElementById("flastname").value
-      + "\nslastname: " + document.getElementById("slastname").value
-      + "\nstartDate: " + document.getElementById("startDate").value
-      + "\nemail: " + document.getElementById("email").value
-      + "\nphoneWork: " + document.getElementById("phoneWork").value
-      + "\nphonePersonal: " + document.getElementById("phonePersonal").value
-      + "\npassword: " + document.getElementById("password").value
-      + "\naddress: " + document.getElementById("address").value
-      );
+    + "\nusername: " + document.getElementById("username").value
+    + "\nname: " + document.getElementById("name").value
+    + "\nflastname: " + document.getElementById("flastname").value
+    + "\nslastname: " + document.getElementById("slastname").value
+    + "\nstartDate: " + document.getElementById("startDate").value
+    + "\nemail: " + document.getElementById("email").value
+    + "\nphoneWork: " + document.getElementById("phoneWork").value
+    + "\nphonePersonal: " + document.getElementById("phonePersonal").value
+    + "\npassword: " + document.getElementById("password").value
+    + "\naddress: " + document.getElementById("address").value
+  );
 }
